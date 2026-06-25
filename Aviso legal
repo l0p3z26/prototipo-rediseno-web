@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aviso Legal - Diego López</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-bright": "#f8f9fa",
+                            "surface-container-high": "#e7e8e9",
+                            "error-container": "#ffdad6",
+                            "on-primary-fixed-variant": "#474746",
+                            "surface-container-highest": "#e1e3e4",
+                            "on-tertiary-container": "#6277ff",
+                            "primary": "#000000",
+                            "on-secondary-fixed-variant": "#5d4201",
+                            "surface-container-low": "#f3f4f5",
+                            "on-tertiary": "#ffffff",
+                            "on-secondary-container": "#785a1a",
+                            "on-error": "#ffffff",
+                            "background": "#f8f9fa",
+                            "tertiary-fixed-dim": "#bbc3ff",
+                            "on-error-container": "#93000a",
+                            "surface-white": "#FFFFFF",
+                            "primary-container": "#1c1b1b",
+                            "tertiary-container": "#000e5f",
+                            "on-secondary-fixed": "#261900",
+                            "surface-container-lowest": "#ffffff",
+                            "on-primary-fixed": "#1c1b1b",
+                            "on-secondary": "#ffffff",
+                            "secondary-fixed-dim": "#e9c176",
+                            "secondary": "#775a19",
+                            "surface": "#f8f9fa",
+                            "inverse-primary": "#c8c6c5",
+                            "inverse-on-surface": "#f0f1f2",
+                            "on-tertiary-fixed-variant": "#1230c5",
+                            "secondary-fixed": "#ffdea5",
+                            "primary-fixed": "#e5e2e1",
+                            "copper-accent": "#B87333",
+                            "surface-tint": "#5f5e5e",
+                            "inverse-surface": "#2e3132",
+                            "on-background": "#191c1d",
+                            "outline": "#747878",
+                            "error": "#ba1a1a",
+                            "tertiary": "#000000",
+                            "tertiary-fixed": "#dfe0ff",
+                            "surface-variant": "#e1e3e4",
+                            "border-subtle": "#E5E7EB",
+                            "secondary-container": "#fed488",
+                            "text-muted": "#6B7280",
+                            "primary-fixed-dim": "#c8c6c5",
+                            "surface-container": "#edeeef",
+                            "on-surface": "#191c1d",
+                            "on-primary-container": "#858383",
+                            "surface-dim": "#d9dadb",
+                            "on-tertiary-fixed": "#000e5f",
+                            "outline-variant": "#c4c7c7",
+                            "on-primary": "#ffffff",
+                            "on-surface-variant": "#444748"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "unit": "8px",
+                            "section-padding": "80px",
+                            "container-max-width": "1280px",
+                            "gutter": "24px",
+                            "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                            "headline-lg-mobile": [
+                                    "Hanken Grotesk"
+                            ],
+                            "body-md": [
+                                    "Inter"
+                            ],
+                            "headline-md": [
+                                    "Hanken Grotesk"
+                            ],
+                            "display-lg": [
+                                    "Hanken Grotesk"
+                            ],
+                            "headline-lg": [
+                                    "Hanken Grotesk"
+                            ],
+                            "label-sm": [
+                                    "Hanken Grotesk"
+                            ],
+                            "body-lg": [
+                                    "Inter"
+                            ]
+                    },
+                    "fontSize": {
+                            "headline-lg-mobile": [
+                                    "28px",
+                                    {
+                                            "lineHeight": "36px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "display-lg": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "56px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "label-sm": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "400"
+                                    }
+                            ]
+                    }
+            },
+                },
+            }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<header class="bg-surface-white dark:bg-primary-container text-primary dark:text-on-primary full-width top-0 sticky border-b border-border-subtle dark:border-outline-variant shadow-sm dark:shadow-none z-50">
+<div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max-width mx-auto z-50">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-on-primary tracking-tight" href="index.html">
+</a>
+<nav class="hidden md:flex space-x-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="index.html#servicios">Servicios</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="index.html#trabajos">Trabajos</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="index.html#opiniones">Opiniones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="index.html" rel="noopener noreferrer" target="_blank">Blog</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="index.html#contacto">Contacto</a>
+</nav>
+<div class="hidden md:flex items-center space-x-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-copper-accent flex items-center gap-2" href="tel:+34919930335">
+<span class="material-symbols-outlined text-[18px]">call</span>
+                    +34 669 23 67 51
+                </a>
+<a class="bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors scale-95 active:scale-90 transition-transform shadow-sm" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo+y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                    Pedir presupuesto
+                </a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full">
+<section class="relative bg-surface-bright py-section-padding px-gutter w-full">
+<div class="max-w-container-max-width mx-auto">
+<div class="text-center mb-12">
+<span class="material-symbols-outlined text-copper-accent text-[40px] mb-4">gavel</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Aviso legal y derechos de autor</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">Información sobre el estado del proyecto, la autoría y el uso permitido de esta página web.</p>
+</div>
+<div class="bg-surface-white rounded-xl border border-border-subtle shadow-sm p-8 md:p-10 max-w-4xl mx-auto">
+<div class="flex items-start gap-4 mb-6">
+<span class="material-symbols-outlined text-copper-accent text-[32px] mt-1">info</span>
+<div>
+<h2 class="font-headline-md text-[22px] text-primary mb-2">Estado del proyecto</h2>
+<p class="font-body-md text-on-surface-variant leading-relaxed">Esta página web no está terminada al 100%. Actualmente funciona como prototipo visual y funcional para mostrar una propuesta de diseño, estructura y experiencia de usuario.</p>
+</div>
+</div>
+<div class="space-y-5 font-body-md text-on-surface-variant leading-relaxed">
+<p>Todo el contenido de esta web, incluyendo su diseño, estructura, textos, código, estilo visual, distribución y cualquier otro elemento propio del proyecto, pertenece a Diego López, salvo aquellos recursos externos que puedan estar sujetos a sus propias licencias.</p>
+<p>Queda prohibida la copia, reutilización, modificación, distribución, publicación o apropiación total o parcial de esta web sin autorización previa, expresa y aceptada por mí.</p>
+<p>Cualquier uso no autorizado, robo, copia o intento de utilizar esta web como propia sin permiso podrá conllevar las acciones legales correspondientes.</p>
+<p>El desconocimiento de este aviso no exime de su cumplimiento ni elimina las posibles consecuencias derivadas de un uso no autorizado.</p>
+<p>El uso de esta web o de cualquiera de sus partes solo estará permitido si ha sido comunicado previamente y aceptado de forma clara por el titular del proyecto.</p>
+</div>
+<div class="mt-10 text-center">
+<a class="inline-flex items-center gap-2 bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-8 py-4 rounded-lg hover:bg-opacity-90 transition-colors shadow-sm" href="index.html">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+Volver a la página principal
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-primary-container dark:bg-black text-on-primary dark:text-on-primary-fixed full-width w-full">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-section-padding w-full max-w-container-max-width mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<div class="font-headline-md text-headline-md font-bold text-surface-white mb-2">Prototipo Web</div>
+<p class="font-body-md text-body-md text-on-primary-container dark:text-surface-variant max-w-sm">Desarrollo y rediseño de páginas web con estructura clara, diseño profesional y enfoque en resultados.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-6 md:gap-12 text-center md:text-left">
+<div class="flex flex-col gap-3">
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="aviso-legal.html" target="_self">Aviso Legal</a>
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Política de Privacidad</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Cookies</a>
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 py-6 px-gutter text-center">
+<p class="font-body-md text-body-md text-on-primary-container text-sm">© 2026 Diego López. Todos los derechos reservados.</p>
+</div>
+</footer>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface-white/95 backdrop-blur-md md:hidden border-t border-border-subtle shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-all w-full h-full" href="tel:+34919930335">
+<span class="material-symbols-outlined mb-1">call</span>
+<span class="font-label-sm text-label-sm text-[10px]">Llamar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-all w-full h-full border-l border-border-subtle" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-sm text-label-sm text-[10px]">WhatsApp</span>
+</a>
+</nav>
+</body></html>
