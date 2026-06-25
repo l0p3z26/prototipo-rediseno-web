@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prototipo Web - Diego López</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-bright": "#f8f9fa",
+                            "surface-container-high": "#e7e8e9",
+                            "error-container": "#ffdad6",
+                            "on-primary-fixed-variant": "#474746",
+                            "surface-container-highest": "#e1e3e4",
+                            "on-tertiary-container": "#6277ff",
+                            "primary": "#000000",
+                            "on-secondary-fixed-variant": "#5d4201",
+                            "surface-container-low": "#f3f4f5",
+                            "on-tertiary": "#ffffff",
+                            "on-secondary-container": "#785a1a",
+                            "on-error": "#ffffff",
+                            "background": "#f8f9fa",
+                            "tertiary-fixed-dim": "#bbc3ff",
+                            "on-error-container": "#93000a",
+                            "surface-white": "#FFFFFF",
+                            "primary-container": "#1c1b1b",
+                            "tertiary-container": "#000e5f",
+                            "on-secondary-fixed": "#261900",
+                            "surface-container-lowest": "#ffffff",
+                            "on-primary-fixed": "#1c1b1b",
+                            "on-secondary": "#ffffff",
+                            "secondary-fixed-dim": "#e9c176",
+                            "secondary": "#775a19",
+                            "surface": "#f8f9fa",
+                            "inverse-primary": "#c8c6c5",
+                            "inverse-on-surface": "#f0f1f2",
+                            "on-tertiary-fixed-variant": "#1230c5",
+                            "secondary-fixed": "#ffdea5",
+                            "primary-fixed": "#e5e2e1",
+                            "copper-accent": "#B87333",
+                            "surface-tint": "#5f5e5e",
+                            "inverse-surface": "#2e3132",
+                            "on-background": "#191c1d",
+                            "outline": "#747878",
+                            "error": "#ba1a1a",
+                            "tertiary": "#000000",
+                            "tertiary-fixed": "#dfe0ff",
+                            "surface-variant": "#e1e3e4",
+                            "border-subtle": "#E5E7EB",
+                            "secondary-container": "#fed488",
+                            "text-muted": "#6B7280",
+                            "primary-fixed-dim": "#c8c6c5",
+                            "surface-container": "#edeeef",
+                            "on-surface": "#191c1d",
+                            "on-primary-container": "#858383",
+                            "surface-dim": "#d9dadb",
+                            "on-tertiary-fixed": "#000e5f",
+                            "outline-variant": "#c4c7c7",
+                            "on-primary": "#ffffff",
+                            "on-surface-variant": "#444748"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "unit": "8px",
+                            "section-padding": "80px",
+                            "container-max-width": "1280px",
+                            "gutter": "24px",
+                            "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                            "headline-lg-mobile": [
+                                    "Hanken Grotesk"
+                            ],
+                            "body-md": [
+                                    "Inter"
+                            ],
+                            "headline-md": [
+                                    "Hanken Grotesk"
+                            ],
+                            "display-lg": [
+                                    "Hanken Grotesk"
+                            ],
+                            "headline-lg": [
+                                    "Hanken Grotesk"
+                            ],
+                            "label-sm": [
+                                    "Hanken Grotesk"
+                            ],
+                            "body-lg": [
+                                    "Inter"
+                            ]
+                    },
+                    "fontSize": {
+                            "headline-lg-mobile": [
+                                    "28px",
+                                    {
+                                            "lineHeight": "36px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "display-lg": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "56px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "label-sm": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "400"
+                                    }
+                            ]
+                    }
+            },
+                },
+            }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface-white dark:bg-primary-container text-primary dark:text-on-primary full-width top-0 sticky border-b border-border-subtle dark:border-outline-variant shadow-sm dark:shadow-none z-50">
+<div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max-width mx-auto z-50">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-on-primary tracking-tight" href="#">
+</a>
+<nav class="hidden md:flex space-x-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#servicios">Servicios</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#trabajos">Trabajos</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#opiniones">Opiniones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#" rel="noopener noreferrer" target="_blank">Blog</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#contacto">Contacto</a>
+</nav>
+<div class="hidden md:flex items-center space-x-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-copper-accent flex items-center gap-2" href="tel:+34919930335">
+<span class="material-symbols-outlined text-[18px]">call</span>
+                    +34 669 23 67 51
+                </a>
+<a class="bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors scale-95 active:scale-90 transition-transform shadow-sm" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo+y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                    Pedir presupuesto
+                </a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full">
+<!-- Hero Section -->
+<section class="relative bg-surface-bright py-section-padding px-gutter w-full">
+<div class="max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Creación de páginas web y rediseño</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">Creo páginas webs de 0 o rediseño si crees que necesita un cambio. Primera consulta sin compromiso.</p>
+<div class="flex flex-col sm:flex-row gap-4 mb-8">
+<a class="bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-8 py-4 rounded-lg text-center hover:bg-opacity-90 transition-all shadow-sm" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">Pedir presupuesto gratis</a>
+<a class="border border-copper-accent text-copper-accent font-label-sm text-label-sm px-8 py-4 rounded-lg text-center hover:bg-surface-container-low transition-all" href="#trabajos">Ver trabajos realizados</a>
+</div>
+<div class="flex items-center gap-6 text-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-copper-accent" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold">5/5 en proyectos web (244 opiniones)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-copper-accent" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Presupuesto sin compromiso</span>
+</div>
+</div>
+</div>
+<div class="relative h-[600px] w-full rounded-xl overflow-hidden shadow-2xl bg-surface-container-high">
+<div class="absolute inset-0 bg-black/10 z-10"></div>
+<img alt="Pantalla con diseño de una página web profesional" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"/></div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="bg-primary-container text-surface-white py-12 px-gutter w-full" id="opiniones">
+<div class="max-w-container-max-width mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-outline-variant/30 mb-14">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[32px] text-copper-accent mb-2" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">5/5 en proyectos web</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[32px] text-copper-accent mb-2">forum</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">244 Opiniones</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[32px] text-copper-accent mb-2">request_quote</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Presupuesto Gratuito</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[32px] text-copper-accent mb-2">verified</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Proyectos Garantizados</span>
+</div>
+</div>
+<!-- Reviews carousel -->
+<div class="max-w-container-max-width mx-auto">
+<div class="flex items-center justify-center gap-3 mb-8">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-surface-white/80">Opiniones de clientes</span>
+</div>
+<div class="overflow-hidden" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+<div class="reviews-track flex gap-6" style="width: max-content;">
+<!-- Reviews (duplicadas para loop infinito) -->
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Me creó una web desde cero con una estructura clara, diseño limpio y todo adaptado a móvil. El resultado quedó profesional y fácil de usar."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">María G.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Rediseñó mi página antigua y ahora se ve mucho más moderna, rápida y ordenada. El cambio se nota desde el primer vistazo."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Carlos M.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Necesitaba una landing para presentar mi servicio y quedó directa, visual y enfocada a conseguir contactos. Muy buen trabajo."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Laura P.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"La comunicación fue rápida y entendió exactamente el estilo que buscaba. La web quedó sencilla, profesional y bien organizada."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Javier S.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Adaptó la web para que cargase mejor y se viera correctamente en ordenador, tablet y móvil. El resultado quedó muy pulido."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Ana R.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Me ayudó a convertir una idea básica en una página completa, con secciones claras, textos cuidados y un diseño coherente."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Roberto F.</p>
+</div>
+<!-- Duplicado para loop infinito -->
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Me creó una web desde cero con una estructura clara, diseño limpio y todo adaptado a móvil. El resultado quedó profesional y fácil de usar."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">María G.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Rediseñó mi página antigua y ahora se ve mucho más moderna, rápida y ordenada. El cambio se nota desde el primer vistazo."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Carlos M.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Necesitaba una landing para presentar mi servicio y quedó directa, visual y enfocada a conseguir contactos. Muy buen trabajo."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Laura P.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"La comunicación fue rápida y entendió exactamente el estilo que buscaba. La web quedó sencilla, profesional y bien organizada."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Javier S.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Adaptó la web para que cargase mejor y se viera correctamente en ordenador, tablet y móvil. El resultado quedó muy pulido."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Ana R.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Me ayudó a convertir una idea básica en una página completa, con secciones claras, textos cuidados y un diseño coherente."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Roberto F.</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-6">
+<a class="inline-flex items-center gap-2 text-surface-white/70 hover:text-copper-accent font-label-sm text-label-sm transition-colors duration-200" href="https://github.com/l0p3z26" rel="noopener noreferrer" target="_blank">
+Ver repositorio de Github
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+<style>
+.reviews-track { animation: scroll-left 40s linear infinite; }
+.reviews-track:hover { animation-play-state: paused; }
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.review-card .flex { color: #B87333; font-size: 18px; }
+</style>
+<!-- Servicios Grid -->
+<section class="py-section-padding px-gutter bg-surface-bright w-full" id="trabajos">
+<div class="max-w-container-max-width mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Proyectos web que transmiten calidad desde el primer vistazo</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Selección de proyectos web destacados: páginas creadas desde cero, rediseños y propuestas digitales profesionales.</p>
+</div>
+<div class="relative group">
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-8 no-scrollbar scroll-smooth" id="projects-carousel">
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 overflow-hidden bg-surface-container-high"><img alt="Diseño de página web corporativa en pantalla" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1530435460869-d13625c69bbf?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Webs corporativas</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Páginas profesionales para presentar negocios, servicios o marcas personales.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 overflow-hidden bg-surface-container-high"><img alt="Diseño de contenido digital para landing page" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1759215524484-89c8d7ae28f2?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Landing pages</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Páginas directas y enfocadas a captar clientes o solicitudes de presupuesto.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 overflow-hidden bg-surface-container-high"><img alt="Rediseño visual de una interfaz web" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1776278806688-64ef6a7e2cc5?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Rediseños web</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Actualización visual, estructural y funcional de páginas antiguas.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 overflow-hidden bg-surface-container-high"><img alt="Compra online desde un portátil" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Tiendas online</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Estructuras preparadas para mostrar productos, servicios y formas de contacto.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 bg-surface-container-high overflow-hidden"><img alt="Optimización de diseño y experiencia de usuario" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1761122912306-13d8f83892c1?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Optimización web</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Mejoras de velocidad, estructura, claridad visual y experiencia de usuario.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 bg-surface-container-high overflow-hidden"><img alt="Portátil con proyecto web en pantalla" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1678690832310-cf614292671d?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Mantenimiento web</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Ajustes, actualizaciones y mejoras continuas para mantener tu web al día.</p>
+</div>
+</div>
+</div>
+<div class="hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 -right-6 justify-between pointer-events-none">
+<button class="pointer-events-auto bg-surface-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg text-primary hover:text-copper-accent transition-all" onclick="carouselPrev()">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="pointer-events-auto bg-surface-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg text-primary hover:text-copper-accent transition-all" onclick="carouselNext()">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="flex justify-center gap-2 mt-4" id="carousel-dots">
+<div class="carousel-dot w-2 h-2 rounded-full bg-copper-accent transition-colors duration-300"></div>
+<div class="carousel-dot w-2 h-2 rounded-full bg-outline-variant opacity-40 transition-colors duration-300"></div>
+<div class="carousel-dot w-2 h-2 rounded-full bg-outline-variant opacity-40 transition-colors duration-300"></div>
+<div class="carousel-dot w-2 h-2 rounded-full bg-outline-variant opacity-40 transition-colors duration-300"></div>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script>
+    let carouselPage = 0;
+    const TOTAL_PAGES = 4;
+
+    function updateDots(page) {
+        document.querySelectorAll('.carousel-dot').forEach(function(dot, i) {
+            if (i === page) {
+                dot.style.backgroundColor = '#B87333';
+                dot.style.opacity = '1';
+            } else {
+                dot.style.backgroundColor = '#747878';
+                dot.style.opacity = '0.4';
+            }
+        });
+    }
+
+    function carouselNext() {
+        if (carouselPage < TOTAL_PAGES - 1) {
+            carouselPage++;
+            document.getElementById('projects-carousel').scrollBy({ left: 400, behavior: 'smooth' });
+            updateDots(carouselPage);
+        }
+    }
+
+    function carouselPrev() {
+        if (carouselPage > 0) {
+            carouselPage--;
+            document.getElementById('projects-carousel').scrollBy({ left: -400, behavior: 'smooth' });
+            updateDots(carouselPage);
+        }
+    }
+</script>
+</div>
+</div>
+</section><section class="py-section-padding px-gutter bg-surface-container-lowest w-full" id="servicios">
+<div class="max-w-container-max-width mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Servicios de desarrollo web</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Soluciones para crear páginas web desde cero o rediseñar webs existentes con estructura clara, diseño profesional y enfoque comercial.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Servicio 1 -->
+<div class="group bg-surface-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-surface-container-high"><img alt="Código de una página web en un portátil" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-[20px]">Web desde cero</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Creación completa de páginas web profesionales, desde la estructura inicial hasta el diseño final.</p>
+<a class="text-copper-accent font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-2 hover:text-tertiary-container transition-colors" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo+y+quer%C3%ADa+pedir+presupuesto+para+una+p%C3%A1gina+web%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                                Pedir presupuesto <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Servicio 2 -->
+<div class="group bg-surface-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-surface-container-high"><img alt="Rediseño web en una pantalla de escritorio" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-[20px]">Rediseño web</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Actualización de webs antiguas para hacerlas más modernas, claras y adaptadas a móvil.</p>
+<a class="text-copper-accent font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-2 hover:text-tertiary-container transition-colors" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                                Pedir presupuesto <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Servicio 3 -->
+<div class="group bg-surface-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-surface-container-high"><img alt="Persona revisando una página web en un portátil" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1635405050330-b0824eb1bf26?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-[20px]">Landing pages</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Páginas enfocadas a presentar un servicio, captar clientes y facilitar el contacto.</p>
+<a class="text-copper-accent font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-2 hover:text-tertiary-container transition-colors" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                                Pedir presupuesto <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Servicio 4 -->
+<div class="group bg-surface-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-surface-container-high"><img alt="Gestión de tienda online desde un portátil" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1688561807440-8a57dfa77ee3?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-[20px]">Tiendas online</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Webs para negocios, servicios o proyectos personales con imagen profesional y estructura clara.</p>
+<a class="text-copper-accent font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-2 hover:text-tertiary-container transition-colors" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                                Pedir presupuesto <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact/Map Section -->
+<section class="py-section-padding px-gutter bg-surface-white w-full" id="contacto">
+<div class="max-w-container-max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Contacto para tu proyecto web</h2>
+<p class="font-body-md text-on-surface-variant mb-8">Contáctame para hablar sobre tu página web:</p>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-copper-accent mt-1">location_on</span>
+<div>
+<h4 class="font-headline-md text-[18px] text-primary">Dirección</h4>
+<p class="text-on-surface-variant">Plaza de España, 28008 Madrid</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-copper-accent mt-1">call</span>
+<div>
+<h4 class="font-headline-md text-[18px] text-primary">Teléfono</h4>
+<p class="text-on-surface-variant">+34 669 23 67 51<p>
+<p class="text-on-surface-variant">+34 669 23 67 51</p>
+</p></p></div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-copper-accent mt-1">mail</span>
+<div>
+<h4 class="font-headline-md text-[18px] text-primary">Email</h4>
+<p class="text-on-surface-variant">lopezmorante08@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-copper-accent mt-1">schedule</span>
+<div>
+<h4 class="font-headline-md text-[18px] text-primary">Horario</h4>
+<p class="text-on-surface-variant">Lunes, martes, miércoles, jueves, viernes</p>
+<p class="text-on-surface-variant">00:00 – 00:00</p>
+<p class="text-on-surface-variant mt-2">Sábado</p>
+<p class="text-on-surface-variant">00:00 – 24:00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-xl overflow-hidden shadow-md">
+<div class="relative h-[360px]">
+<iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=40.423889,-3.712222&amp;t=m&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" style="border:0;" width="100%"></iframe>
+</div>
+<a class="flex items-center justify-center gap-2 py-3 bg-surface-white hover:bg-surface-container-low transition-colors text-primary font-label-sm text-label-sm border-t border-border-subtle" href="https://www.google.com/maps/search/?api=1&amp;query=40.423889,-3.712222" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-copper-accent">map</span>
+Abrir mapa
+</a>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-primary-container py-section-padding px-gutter text-center w-full">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-display-lg text-display-lg text-surface-white mb-6">Transforma tu página web o crea una de 0</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-10">Tener una web profesional, clara y preparada para transmitir confianza está al alcance de cualquier proyecto. Escríbeme hoy y vemos la mejor solución para el tuyo.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-8 py-4 rounded-lg hover:bg-opacity-90 transition-colors shadow-sm" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                        Solicitar Presupuesto
+                    </a>
+<a class="bg-[#25D366] text-surface-white font-label-sm text-label-sm px-8 py-4 rounded-lg hover:bg-opacity-90 transition-colors shadow-sm flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined">chat</span>
+                        WhatsApp
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-black text-on-primary dark:text-on-primary-fixed full-width w-full">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-section-padding w-full max-w-container-max-width mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<div class="font-headline-md text-headline-md font-bold text-surface-white mb-2">Prototipo Web</div>
+<p class="font-body-md text-body-md text-on-primary-container dark:text-surface-variant max-w-sm">Desarrollo y rediseño de páginas web con estructura clara, diseño profesional y enfoque en resultados.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-6 md:gap-12 text-center md:text-left">
+<div class="flex flex-col gap-3">
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Aviso Legal</a>
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Política de Privacidad</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Cookies</a>
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 py-6 px-gutter text-center">
+<p class="font-body-md text-body-md text-on-primary-container text-sm">© 2026 Diego López. Todos los derechos reservados.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface-white/95 backdrop-blur-md md:hidden border-t border-border-subtle shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-all w-full h-full" href="tel:+34919930335">
+<span class="material-symbols-outlined mb-1">call</span>
+<span class="font-label-sm text-label-sm text-[10px]">Llamar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-all w-full h-full border-l border-border-subtle" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-sm text-label-sm text-[10px]">WhatsApp</span>
+</a>
+</nav>
+</body></html>
