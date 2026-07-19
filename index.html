@@ -1,958 +1,589 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diego — Técnico SMR y Junior Prompt Engineer</title>
-<meta name="description" content="Portfolio de Diego, estudiante de SMR y Junior Prompt Engineer con experiencia en bots de Discord, automatización y desarrollo web. Madrid, España.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prototipo Web - Diego López</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-bright": "#f8f9fa",
+                            "surface-container-high": "#e7e8e9",
+                            "error-container": "#ffdad6",
+                            "on-primary-fixed-variant": "#474746",
+                            "surface-container-highest": "#e1e3e4",
+                            "on-tertiary-container": "#6277ff",
+                            "primary": "#000000",
+                            "on-secondary-fixed-variant": "#5d4201",
+                            "surface-container-low": "#f3f4f5",
+                            "on-tertiary": "#ffffff",
+                            "on-secondary-container": "#785a1a",
+                            "on-error": "#ffffff",
+                            "background": "#f8f9fa",
+                            "tertiary-fixed-dim": "#bbc3ff",
+                            "on-error-container": "#93000a",
+                            "surface-white": "#FFFFFF",
+                            "primary-container": "#1c1b1b",
+                            "tertiary-container": "#000e5f",
+                            "on-secondary-fixed": "#261900",
+                            "surface-container-lowest": "#ffffff",
+                            "on-primary-fixed": "#1c1b1b",
+                            "on-secondary": "#ffffff",
+                            "secondary-fixed-dim": "#e9c176",
+                            "secondary": "#775a19",
+                            "surface": "#f8f9fa",
+                            "inverse-primary": "#c8c6c5",
+                            "inverse-on-surface": "#f0f1f2",
+                            "on-tertiary-fixed-variant": "#1230c5",
+                            "secondary-fixed": "#ffdea5",
+                            "primary-fixed": "#e5e2e1",
+                            "copper-accent": "#B87333",
+                            "surface-tint": "#5f5e5e",
+                            "inverse-surface": "#2e3132",
+                            "on-background": "#191c1d",
+                            "outline": "#747878",
+                            "error": "#ba1a1a",
+                            "tertiary": "#000000",
+                            "tertiary-fixed": "#dfe0ff",
+                            "surface-variant": "#e1e3e4",
+                            "border-subtle": "#E5E7EB",
+                            "secondary-container": "#fed488",
+                            "text-muted": "#6B7280",
+                            "primary-fixed-dim": "#c8c6c5",
+                            "surface-container": "#edeeef",
+                            "on-surface": "#191c1d",
+                            "on-primary-container": "#858383",
+                            "surface-dim": "#d9dadb",
+                            "on-tertiary-fixed": "#000e5f",
+                            "outline-variant": "#c4c7c7",
+                            "on-primary": "#ffffff",
+                            "on-surface-variant": "#444748"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "unit": "8px",
+                            "section-padding": "80px",
+                            "container-max-width": "1280px",
+                            "gutter": "24px",
+                            "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                            "headline-lg-mobile": [
+                                    "Hanken Grotesk"
+                            ],
+                            "body-md": [
+                                    "Inter"
+                            ],
+                            "headline-md": [
+                                    "Hanken Grotesk"
+                            ],
+                            "display-lg": [
+                                    "Hanken Grotesk"
+                            ],
+                            "headline-lg": [
+                                    "Hanken Grotesk"
+                            ],
+                            "label-sm": [
+                                    "Hanken Grotesk"
+                            ],
+                            "body-lg": [
+                                    "Inter"
+                            ]
+                    },
+                    "fontSize": {
+                            "headline-lg-mobile": [
+                                    "28px",
+                                    {
+                                            "lineHeight": "36px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "display-lg": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "56px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "label-sm": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "400"
+                                    }
+                            ]
+                    }
+            },
+                },
+            }
+    </script>
 <style>
-/* =============================================================
-   1. Tokens
-   ============================================================= */
-:root {
-  --bg:       #08080f;
-  --surface:  #0f0f1a;
-  --card:     #121220;
-  --border:   #1c1c2e;
-  --border2:  #252538;
-  --accent:   #6366f1;
-  --accent2:  #818cf8;
-  --accent3:  #4f46e5;
-  --green:    #22c55e;
-  --text:     #e2e8f0;
-  --muted:    #64748b;
-  --subtle:   #334155;
-  --sans:     'Inter', system-ui, sans-serif;
-  --mono:     'JetBrains Mono', 'Fira Code', monospace;
-  --ease:     cubic-bezier(0.16, 1, 0.3, 1);
-  --gutter:   clamp(1.25rem, 5vw, 2.5rem);
-  --max:      1100px;
-}
-
-/* =============================================================
-   2. Reset
-   ============================================================= */
-*, *::before, *::after { box-sizing: border-box; margin: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
-}
-img, svg { display: block; max-width: 100%; }
-button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
-a { color: inherit; text-decoration: none; }
-p { text-wrap: pretty; }
-h1, h2, h3, h4 { text-wrap: balance; line-height: 1.1; letter-spacing: -0.03em; }
-::selection { background: var(--accent); color: #fff; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-
-/* =============================================================
-   3. Utilities
-   ============================================================= */
-.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
-.mono { font-family: var(--mono); }
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
-.reveal.visible { opacity: 1; transform: none; }
-
-/* =============================================================
-   4. Nav
-   ============================================================= */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 1rem var(--gutter);
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(8, 8, 15, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s;
-}
-nav.scrolled { border-color: var(--border); }
-.nav-logo {
-  font-family: var(--mono);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--accent2);
-  letter-spacing: 0.02em;
-}
-.nav-logo span { color: var(--muted); }
-.nav-links { display: flex; gap: 1.75rem; list-style: none; }
-.nav-links a {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--muted);
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--text); }
-.nav-cta {
-  background: var(--accent);
-  color: #fff;
-  padding: 0.45rem 1rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  transition: background 0.2s, transform 0.2s;
-}
-.nav-cta:hover { background: var(--accent3); transform: translateY(-1px); }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.25s; }
-.mobile-menu {
-  display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
-  background: rgba(8,8,15,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  padding: 1.5rem var(--gutter); flex-direction: column; gap: 1.2rem;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--muted); padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
-.mobile-menu a:last-child { border-bottom: 0; color: var(--accent2); }
-
-/* =============================================================
-   5. Hero
-   ============================================================= */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 7rem var(--gutter) 4rem;
-  position: relative; overflow: hidden;
-}
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background:
-    radial-gradient(ellipse 60% 60% at 70% 30%, rgba(99,102,241,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 20% 70%, rgba(99,102,241,0.05) 0%, transparent 70%);
-}
-.hero-grid {
-  position: absolute; inset: 0; z-index: 0;
-  background-image:
-    linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
-}
-.hero-content { position: relative; z-index: 1; max-width: 760px; }
-@keyframes heroIn {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: none; }
-}
-.hero-content > * {
-  opacity: 0;
-  animation: heroIn 0.8s var(--ease) forwards;
-}
-.hero-content > *:nth-child(1) { animation-delay: 0.05s; }
-.hero-content > *:nth-child(2) { animation-delay: 0.15s; }
-.hero-content > *:nth-child(3) { animation-delay: 0.3s; }
-.hero-content > *:nth-child(4) { animation-delay: 0.45s; }
-.hero-content > *:nth-child(5) { animation-delay: 0.55s; }
-.hero-tag {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--mono); font-size: 0.78rem; color: var(--accent2);
-  background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2);
-  padding: 0.35rem 0.8rem; border-radius: 100px; margin-bottom: 1.5rem;
-}
-.hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse-dot 2s infinite; }
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
-  50% { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
-}
-.hero h1 {
-  font-size: clamp(2.5rem, 7vw, 5rem);
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-.hero h1 .accent { color: var(--accent2); }
-.hero-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  color: var(--muted);
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-  max-width: 580px;
-}
-.hero-subtitle strong { color: var(--text); font-weight: 500; }
-.hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
-.btn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  padding: clamp(0.7rem, 0.55rem + 0.5vw, 1.05rem) clamp(1.4rem, 1rem + 1.6vw, 2.2rem);
-  border-radius: 9px;
-  font-size: clamp(0.88rem, 0.8rem + 0.3vw, 1.05rem); font-weight: 600;
-  transition: all 0.2s var(--ease);
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent3); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(99,102,241,0.3); }
-.btn-ghost { border: 1px solid var(--border2); color: var(--muted); background: var(--card); }
-.btn-ghost:hover { border-color: var(--accent); color: var(--text); transform: translateY(-2px); }
-.hero-socials { display: flex; gap: 0.75rem; }
-.social-btn {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.5rem 0.9rem; border-radius: 6px;
-  font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
-  color: var(--muted); border: 1px solid var(--border);
-  background: var(--surface);
-  transition: all 0.2s;
-}
-.social-btn:hover { color: var(--text); border-color: var(--border2); transform: translateY(-2px); }
-
-/* =============================================================
-   6. Section shared
-   ============================================================= */
-section { padding: 5rem 0; }
-.section-label {
-  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
-  color: var(--accent2); letter-spacing: 0.12em; text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
-.section-label::before { content: ''; }
-.section-title {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  font-weight: 800; color: #fff; margin-bottom: 0.75rem;
-}
-.section-desc { color: var(--muted); max-width: 540px; margin-bottom: 3rem; font-size: 0.95rem; }
-.divider { height: 1px; background: var(--border); margin: 0 auto; max-width: var(--max); }
-
-/* =============================================================
-   7. About
-   ============================================================= */
-#about { background: var(--surface); }
-.about-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
-.about-avatar {
-  width: 120px; height: 120px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent3) 100%);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2.5rem; font-weight: 800; color: #fff;
-  border: 3px solid rgba(99,102,241,0.3);
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.about-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.about-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-.about-name { font-size: 1.4rem; font-weight: 700; color: #fff; }
-.about-role { font-family: var(--mono); font-size: 0.8rem; color: var(--accent2); margin-top: 0.2rem; }
-.about-text { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem; }
-.about-text strong { color: var(--text); }
-.about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
-.tag {
-  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
-  padding: 0.3rem 0.7rem; border-radius: 4px;
-  background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.18);
-  color: var(--accent2);
-}
-
-/* =============================================================
-   8. Skills
-   ============================================================= */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-.skill-category {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 12px; padding: 1.5rem;
-  transition: all 0.25s var(--ease);
-  position: relative; overflow: hidden;
-}
-.skill-category::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0; transition: opacity 0.25s;
-}
-.skill-category:hover { border-color: var(--border2); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
-.skill-category:hover::before { opacity: 1; }
-.skill-cat-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
-.skill-cat-title { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; letter-spacing: 0.02em; }
-.skill-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.skill-chip {
-  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
-  padding: 0.25rem 0.6rem; border-radius: 4px;
-  background: rgba(255,255,255,0.04); border: 1px solid var(--border2);
-  color: var(--muted); transition: all 0.15s;
-}
-.skill-chip:hover { color: var(--text); border-color: var(--accent); }
-
-/* =============================================================
-   9. Projects
-   ============================================================= */
-#projects { background: var(--surface); }
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
-.project-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 14px; padding: 1.75rem;
-  display: flex; flex-direction: column;
-  transition: all 0.25s var(--ease);
-  position: relative; overflow: hidden;
-}
-.project-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0; transition: opacity 0.25s;
-}
-.project-card:hover { border-color: var(--border2); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
-.project-card:hover::before { opacity: 1; }
-.project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
-.project-icon { font-size: 1.6rem; }
-.project-links { display: flex; gap: 0.5rem; }
-.project-link {
-  width: 30px; height: 30px; border-radius: 6px;
-  background: rgba(255,255,255,0.04); border: 1px solid var(--border2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.75rem; color: var(--muted); transition: all 0.15s;
-}
-.project-link:hover { color: var(--text); border-color: var(--accent); }
-.project-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
-.project-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.65; flex: 1; margin-bottom: 1.25rem; }
-.project-tech { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-.tech-tag {
-  font-family: var(--mono); font-size: 0.67rem; font-weight: 500;
-  padding: 0.2rem 0.5rem; border-radius: 3px;
-  background: rgba(99,102,241,0.07); border: 1px solid rgba(99,102,241,0.15);
-  color: var(--accent2);
-}
-
-/* =============================================================
-   10. Education
-   ============================================================= */
-.education-list { display: flex; flex-direction: column; gap: 1.25rem; max-width: 720px; margin: 0 auto; }
-.edu-card {
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 12px; padding: 1.5rem 1.75rem;
-  display: flex; gap: 1.25rem; align-items: flex-start;
-  transition: all 0.25s var(--ease);
-  position: relative; overflow: hidden;
-}
-.edu-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0; transition: opacity 0.25s;
-}
-.edu-card:hover { border-color: var(--border2); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
-.edu-card:hover::before { opacity: 1; }
-.edu-icon {
-  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
-  background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2);
-  display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-}
-.edu-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
-.edu-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
-.edu-period {
-  font-family: var(--mono); font-size: 0.7rem; color: var(--accent2);
-  background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.15);
-  padding: 0.15rem 0.5rem; border-radius: 3px; display: inline-block;
-}
-.edu-topics { margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
-.edu-topic {
-  font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 3px;
-  background: rgba(255,255,255,0.04); border: 1px solid var(--border2);
-  color: var(--muted);
-}
-
-/* =============================================================
-   11. Contact
-   ============================================================= */
-#contact {
-  background: var(--surface);
-  text-align: center;
-}
-.contact-inner { max-width: 560px; margin: 0 auto; }
-.contact-desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 2.5rem; }
-.contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
-.contact-card {
-  display: flex; align-items: center; gap: 0.75rem;
-  background: var(--card); border: 1px solid var(--border);
-  border-radius: 10px; padding: 0.85rem 1.25rem;
-  transition: all 0.2s var(--ease);
-  font-size: 0.85rem; font-weight: 500;
-}
-.contact-card:hover { border-color: var(--accent); transform: translateY(-2px); color: var(--accent2); }
-.contact-card-icon { font-size: 1.1rem; }
-.availability {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--mono); font-size: 0.75rem;
-  color: var(--green); padding: 0.45rem 1rem; border-radius: 100px;
-  background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
-}
-.availability::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse-dot 2s infinite; }
-
-/* =============================================================
-   12. Footer
-   ============================================================= */
-footer {
-  padding: 1.75rem var(--gutter);
-  border-top: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  flex-wrap: wrap; gap: 0.75rem;
-  text-align: center;
-}
-.footer-copy { font-size: 0.78rem; color: var(--muted); }
-.footer-made { font-family: var(--mono); font-size: 0.72rem; color: var(--subtle); }
-
-/* =============================================================
-   13. Responsive
-   ============================================================= */
-@media (min-width: 720px) {
-  .about-grid { grid-template-columns: 1fr 1fr; }
-  nav .nav-links { display: flex; }
-  .nav-hamburger { display: none; }
-}
-
-@media (max-width: 719px) {
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero { padding-top: 5.5rem; }
-  .contact-links { flex-direction: column; align-items: center; }
-}
-</style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
-<body>
-
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-logo">Diego</div>
-  <ul class="nav-links">
-    <li><a href="#about">Sobre mí</a></li>
-    <li><a href="#skills">Habilidades</a></li>
-    <li><a href="#projects">Proyectos</a></li>
-    <li><a href="#education">Formación</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Contacto</a>
-  <div class="nav-hamburger" id="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </div>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface-white dark:bg-primary-container text-primary dark:text-on-primary full-width top-0 sticky border-b border-border-subtle dark:border-outline-variant shadow-sm dark:shadow-none z-50">
+<div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max-width mx-auto z-50">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-on-primary tracking-tight" href="#">
+</a>
+<nav class="hidden md:flex space-x-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#servicios">Servicios</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#trabajos">Trabajos</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#opiniones">Opiniones</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#" rel="noopener noreferrer" target="_blank">Blog</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-copper-accent transition-colors duration-200" href="#contacto">Contacto</a>
 </nav>
-
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#about" class="mobile-link">Sobre mí</a>
-  <a href="#skills" class="mobile-link">Habilidades</a>
-  <a href="#projects" class="mobile-link">Proyectos</a>
-  <a href="#education" class="mobile-link">Formación</a>
-  <a href="#contact" class="mobile-link">Contacto</a>
+<div class="hidden md:flex items-center space-x-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-copper-accent flex items-center gap-2" href="tel:+34919930335">
+<span class="material-symbols-outlined text-[18px]">call</span>
+                    +34 669 23 67 51
+                </a>
+<a class="bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors scale-95 active:scale-90 transition-transform shadow-sm" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo+y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                    Pedir presupuesto
+                </a>
 </div>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Madrid, España</div>
-    <h1>Diego<br><span class="accent">López</span></h1>
-    <!-- PLACEHOLDER: Cambia "Villanueva" por tu apellido real -->
-    <p class="hero-subtitle">
-      <strong>Técnico SMR y Junior Prompt Engineer.</strong><br>
-      Creación y rediseño web, desarrollo de bots para Discord y soluciones de automatización con IA.
-    </p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">Ver proyectos</a>
-      <a href="#contact" class="btn btn-ghost">Contacto</a>
-    </div>
-    <div class="hero-socials">
-      <a href="https://github.com/l0p3z26" class="social-btn" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        GitHub
-      </a>
-      <a href="https://linkedin.com/in/lopezmorante" class="social-btn" target="_blank" rel="noopener">
-        <!-- PLACEHOLDER: reemplaza TU_USUARIO con tu LinkedIn -->
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-      <a href="mailto:lopezmorante08@gmail.com" class="social-btn">
-        <!-- PLACEHOLDER: reemplaza TU_EMAIL con tu email real -->
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-        Email
-      </a>
-      <a href="https://wa.me/34669236751?text=He%20visto%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%3A" class="social-btn" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.253c.002-5.45 4.436-9.884 9.889-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.887 9.884M20.52 3.449C18.259 1.187 15.254 0 12.052 0 5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.52 3.449"/></svg>
-        WhatsApp
-      </a>
-    </div>
-  </div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full">
+<!-- Hero Section -->
+<section class="relative bg-surface-bright py-section-padding px-gutter w-full">
+<div class="max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Creación de páginas web y rediseño</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">Creo páginas webs de 0 o rediseño si crees que necesita un cambio. Primera consulta sin compromiso.</p>
+<div class="flex flex-col sm:flex-row gap-4 mb-8">
+<a class="bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-8 py-4 rounded-lg text-center hover:bg-opacity-90 transition-all shadow-sm" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">Pedir presupuesto gratis</a>
+<a class="border border-copper-accent text-copper-accent font-label-sm text-label-sm px-8 py-4 rounded-lg text-center hover:bg-surface-container-low transition-all" href="#trabajos">Ver trabajos realizados</a>
+</div>
+<div class="flex items-center gap-6 text-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-copper-accent" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold">5/5 en proyectos web (244 opiniones)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-copper-accent" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Presupuesto sin compromiso</span>
+</div>
+</div>
+</div>
+<div class="relative h-[600px] w-full rounded-xl overflow-hidden shadow-2xl bg-surface-container-high">
+<div class="absolute inset-0 bg-black/10 z-10"></div>
+<img alt="Pantalla con diseño de una página web profesional" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"/></div>
+</div>
 </section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="reveal">
-        <div class="about-header">
-          <div class="about-avatar"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAFAAUADASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAAAQACBAUDBgcICf/EAEEQAAEDAgQDBgQEBQMCBgMAAAEAAgMEEQUSITEGQVEHEyJhcYEykaGxFCNCwQgVUtHwM2LhJFMWFzQ1Q/FEcqL/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/8QAJxEBAQACAQQCAgICAwAAAAAAAAECEQMEEiExIkETYTJRBRQzcYH/2gAMAwEAAhEDEQA/APUhKVkrWTgtNG2SsnWSQCyVkUkDbIhEjVBAUkhskgSKQRNkDLI2SROjb3A9UCsg5zW7uAVdjWOYfhFHJU4hOIWMBN7F2awvYW3Omy5Bxb2+YVhlw3hzEquFwb+YHsaNRfUXv52+yg7VPMG0ks0RDsrSRbXW2i0CPtPwmjNS7HaylooIp3QteSczy0AuFgDqNvYrjGK9uv8AP8RpoMPnqMFYxrnyGIMeJejettCLn5LjOP8AEFdWyurKV1bNWZnuFQ2fIIS5+lr+H5czqUHvPhfi/hziiEyYDjFLWBu4ZIMw5bb7qXiOPYdh0bHVc2Uvdka1jS9zjzs0anrfkvnxgnEnFTeJM9JOGV9OwvknYGtkPhAvZujj5+5W7YN2u8WYDiZrfyMUmkiDIzUNJbA0G5ZZvwi/21Tym49uUtbS1UImgmZIwi92m9lla9rjpay8ty9suIyNlrcIpWUdTMw/iI3SF0b3WuLDk7fX5qXwH244nRYMDimHNqg9gdHJFL8J1JLr6e61qm49L1E8FPEZZ5o4o27ue4AD3KqKji3hmCAzyY3Q90N3tkzDe3K91457Se0bijiieSQvlZQtH5VMyXMHi/MtsCdLqkwrFMXNK6ohklhlaAMrXkEDyta233UNvcGA8XcO47UyU2F4pDUTxfHGLhw9jYq8OoXiDDOM61/E+G1UuNVkc9OGl1RTjvHRE+FwN9eRFtiF6t4Fx6kxKiaMPx2LFMvxGdoZKTYEg2t1GtuaDcEQgx+dt9jzHRLmiiglZJAkE4JaJtk0pBFJUJApwCRRdm8kE5AoAgnWSIRWSyKKVkZBJEoKaaEJaJIgIAQkUUrIGpJ1krBABsihdJEMlkZFGZHkBrdSVqHEvFdXTU80lHTMEMY8Ur7kX5AbXJ00F1smJiNsL5al7RExt3EmwAGp+268n9una1Li2LHAOGpe7pqC7n1If3cZ1sTf9LbaDn81FZ+0/tNxCauiZjErcPbSyE/h4nhjiB83NJ68lRYtxRw/xRg7YqBlKxxc0NY9v5jSNz4dL7625rkdVS01TUNqY5X19dUkvtFG5oY3kTcXtrpdRKaKrosRZPTXJisQ1jhci1tSOov81fSLTE8PjYRU4Y0fimBz5IwbOsSTtzHpsoFJUPhjMriS4ucx0Thpl0cQfLlfcJuL4xWy1EddKyGimaC0dy05weQPt+6q5DVVN6mc/hIAzI30vcgcy4ndPRVpwHiVFh+N/i/G+mkJY8utmhvpY9R5j3WzYa2Ci4jqjJ4Zu9/6SUO0eCL2I2Oa17b6rQ6IxOqQ2PPBBG28xJ8RAsSALaXt9bKwxKvdNiDLgRvMDGhr9A8jkfqAeS6Y3w52OjYnVtbRTNZAz8W67XsLspc4HW22ot7iy1fh+thpe6jhnkhY6QNEcjrhp/ULdPkR907D8SxXDn1UJc5xjsWvd4mOA3tpvsStSqX1lFUudK1zJ3C0mcedxmHW40K1ldXaRtWP40cPnlja4vbM43vqXXOhB+YOlzZQ8E4nkoKr8XUZpmSDK9jrC+m4HIjTXyWs1c5raaOSW4fEbaHkST9z9VFp3OErXStc4l18uU2Nv2XO3z4bdOlq5YcYgxnCqSWtFT/rQRPDHuFr3HnYkeW4XV+DuJuGOJ6prKTFRw9itN43R1TjE+WUGxbmJs4257grzo6unkjc90Za63wtYWiw20JWemrZqhrHRVUglYbi9ib+R3Wb7Xb6G8D4m6voWh+JOkqGeF+eRsgeRz0+4W1xEubcix2IXgDgfjviLhuo7xs5lbI0Zmg66HkdwvXPY3x3T8XYKZqOuNTUU4tU0s5HfMN9DcAXv7jldNLt0cogIRvEjA9uxF08IgaJFIJWVASRKQQG6aUnboXQJJJBFFJJJBlCKOiVlNobZEAXSsiQmwLapw2Qsii7BJIhBDZFIbJqSApXDRclBaP2yY1Jh3DbqOmqxSzVUb80g+JjBpp5uJsLeag5V/Eh2r0ccE3D2D4iYvCRUVDBnGY6BrQNzbkdF54wzC2Yi9keG0T5Hf6s9fXMOTTnryG+m5V43D5OIeKZ5WtLoYXllMLA2ANnS5eZc4aX5BTa7G8KwWM4cwmZtN+ZMAReaUbMv+rxH0C3jP7So+KYfQ4Nhvd0r2vnn8Mr5ABcWuSRzJ5X0A0Guq55UUldWtdM+SaCAuIja3QOI3sf1a9PRdDpqOoqTDJisgfVVLe8lvctY13ic4/0jVrRfk0dbKfxBHR4ThMuJzRATZe6pmzaENtbNl3F9mjkASTcpcSVyKspqHDKt5mDqyUt1a19wD5kevI+6rqmvmqC6WVn5cMXdwRNGVrXHbTyvf2CkYpi0jnuka1rSHW8LbfXn7qA6vewOa1gGccwCslRqVs+t3OjjJGe3OyzYpUtfOzuSXBjB4iTcnffyJTZJp52Me61rachosTYJqiQQxC51OugCI6BwJxK2Is/FteHCO7Xt1uBcWI59QfZXWLRUOJZ5HPDsozskjbmFj1aTsfIhc+wWnkZVzNZe0FM523+0299b/JbDJDHNh0XeufT5JDG2ZptkPIOtyd9CF2xtsYs1VJiVHTSzucDCQL+OJ9swvza7UH1UZ9FUiQujz6CzQSD6D5KPiTa6jrTFWC8oeRmOpLfXmCrmmZTiUjlHYEC+rDaxHmP2XLW63tFpqqOQMZJnhLSfCDoT6dUZMNc0d7mAa74JWcnHUNI+yfi+EulivHYTNbncRcd4BztyITsBxEOpjTVYLnMbYOb/wDJHe5v5tOoPkVq/tGTC8SdURuhqCHVEYzNedHGxv8AbT3W18JcQ4rwvjMOM4VXPp5GyWcWnwuv4sp/2uC0Wsh/luKyPLhZjwWu5PBOlvmrnDnRS4TM1xa6xAHnZ+l/msNR797LuNKXi3Boqhje6nfE2R7LeE30cW9RffoTYrcwvHn8MPHX8tqhgdbmipjI19PPv3MjhlIPQOO45+q9eUc7KmmZMwghwvoUnlakJIXQVQ5JC5Rv1QNKCckUXZqBRKSAWSCKSKyhG6anWUZFu6JQFkSgRSCCIQEpjk9NITQaEiEkuSALzV/FVxA2mx+AUrzNLSRMhMYJ8MkhJ+YaHE89QvSU0gjjL3bAEleSeMKunrOLqyuxAslijrZ5nzvF2tfo1unPTQKyDSaov4V4MBnzur612sbRd/iJysA6n/N1TYJgZimGL4oBJLGRJMwasabXbGOvn7lW0tbPjGPHFqlr200V2UYd8Tibh0g5A20B5C/OwUfHa8UgFNI8GbRpjB8DL6kE73PMnW2i3P7SnUlbU4jVRtfUdyamVslXL/22bgDzJ/boqjjapfi9dOwSujpadoyMcdbH4QfOwzHn1VMMTe/GLU8bjTxy2Lb3LnWs3yBJA+SlU8jm/jTUljpJ5HXLvE1gJA9CbA6C++pU9+BqLsNfKImNszK3vCHnLudPpb5rC+ha6W93PsLMy7HW2/8Amy3GspnNw58shDJqvRjXAFzWDTMf2UFlFDSUYbIbzSDwB2zdLC/tdLNI111K2OYXaAwRXy9L7fTVOw+PuoZXOYRdrQXX2uR/nqpscsUbz3pLrMPiI+MkEa+Vis2Fd3LUG2sOjy3TwNbe1+W5WdKyYM3LUTxvvGX07nZj7X19NPdT6qodSyM76NhppwYpI+pFjoeoLtFR0dYc9ZUyaMlje0Eb+Q+qscUqnVOJtpzYNgmuHeYGt/Sy6Y3wzYrsckZVuzk97G0FsTucf+0+WinRwx5aB4kaO8i7uaxudSRr9Pmo0VE6cyNhZkaAwHobtJ29LKVJRmlpKUPc4uzXOuoAsTb3Cnnez9BNVDvYw0uEuYtYb6u8Z/cuUCLIzEhWQtAIs50Q2sdCfqR8lGfMX4iYoho1zQPIh97/AP8ARTmSGGd5Gvdkgnq1xcLfZZ3tdJWNNbJiLWN/0mNY7N0AaLX/AM5KZhgMzhStZ4GszyAGxJtoFExZzYYW923O6XugfOzd/TQJmF1Yp3SWLXyAguedrX2H7lc63Frw9j1Xw/j8VTE2OXvHESwSDMx7dfA4dCNP/pe4uxHiGmxPA6empqiSWB0Alpu8dme1gNjG48y06X6WPNeAMUkdLXQ1DLl8jS7pu46ey9R/wqVc/eYZMyXvGS1M0NSM1yx3d3DrcgQGj1ak9rXqVFEbAjmgVtkdkhqkAjZAQgd0tUECQTgkUDUE6yVkXbKkkjZEBOahZEBAkuSRuldQJJLmiUgabIWSskdlRrHaLircM4fqXOcWNdG4yOG7WAa28ySAvFldxDR1dY6le0VIa8hjMx8b3cj0Fua9W/xFuEHZvilRIfiaxjADbW5/cjTyXi/DKZlNhwkEgdUVTx47g5ATqb8tNEFpiOO1EX4h1O+Lv2tsZSTlhjHJo6305DpdabNXuqpA175JCSS0n4n3Op9ToPRSuIZKWJzaGCQAF92xtJOY/wBTjz8uSt+FeFqN1N+OrZ5Jzf8ANZFGXPZ5b6bhXVqKvhKhrJqxri0Bsby572D/AFX8wDzOtlY1WG1MNc6trczICTkiHXp5+f8AgWyDEIqUtiwykjpreFliZJj5Brb5ed/utd4txRtMXNrnt7/4o6aAWI9d7e9itaNo9TXQaySi7iDoQdBtpc6qoxXFITmBe1zi2wFuZ/a2/Wyrn1WIYk95hpBkIsGsBdbrd3p90+lwOUuz1ge6SS5yDcAddFN2iG5zqoBxuLG+u7v85D35KwgP4UGKNpEkgJe22wtsf829UZZKWjmzPLXSsuCxoBA9vl/yq+WtkeSyCM53uvI9ztTrpdZ2aOgkDJGva0GKD4Af1uBuPrYlSyQ2j7pxLnAavvq4ki/2PzVezw5wx5Pd6DmB/h1WV5zOhpIDcRm8jybWO5JPQaD2VlTS+wRx7mSQAF7pnMFtzZpaPsp2KZWU4cYw50UBaLm93Ef3I+ShwNYwU0LTlLXOlJvYkHa/TXX0Ki47ige2dsZAZJZ48m5tPo1W3wsnlUYdmNYw2uXOza8xe/7LJW5cz2s2JGQnmAQB8zcrHhLi6d8hdaw8PksmINbBVRscb5Wh0t/LkPr8wuW/pvt8bYa2VxpGQkEvsNDzvt72UWlIbBI6R9howADXQ7fL7rJXOc5+ckAF2h3sRz9rWWGra45Mzmk6G7RYE9URbYEw1dS6cgZGEut0BGvsvRH8FdTJJjVfTNDX0r5e8843huh92uIXnSimEFHM3N4nN0AHL/Lr01/AxTMdJjk2QtJMeW/Ma7emnzUntq+nq0XAsikE5dGCSSSQC6SCKAJI3QJ1QC6KVkkEhJJJACEgUUkCSSSQJJGyRQNSNrIoFBo3bVg82M8CVdJEW7iR1xe9r/8AC8P8XwikmfTU7RAYi0Pd0Lhc8tNSV9FaiNk0ZjeLg8ivFX8SuBPwfjiraYHRUlQGPjdcZXaHT22+SVY4fPWyU1Y6duV93jKObvXyC6pwlhHFmK0ERmwtwpZGFzS1rmhxIJHhFgVofAODNxfjvCsIfCAJagd4XG+a1j9hZe9sBwumpMKgp2wsBYwAWbyXDl5bjrTtw8cy33PFPEGH41h7pqSJuJTPl8MkMMfdM6akG59jqpHB3ZLxTixikZgBZnIvJUHKLeTenqva54dwyol751FE6Tm7KFPbRxU0f5cbQGjksfl5L7d5xcU9R5IPZNxGMPkjhngiYx2rYwSHW6kfuuf47wPxXFK+M08rwbi7NL66a817vlZSvYWhoN977+6rarD6M+E00euxI2Vuef8AbX4uO/TwPNwLxRG0MZgVQzMbGRwJJU2Ps54tDMsmDyxZxdrebvU/5svc1PgtG1jnGFpJ11F1ClpoXSGMxtIadPRZvLnDHp+OvFH/AJZcWuY1n8vkjcXDLyA9B1Rj7N+IKcOkrIwyGM3LOvrbfVe0/wAHEY3d4yMyXIFhy5KunpKUx90+KMjmLfRZ/NnGv9bjvqPGNZQYmZX08dLNJLNYOfkIDG9Lnc9VlZwDik1N3krwxznaNaL2ABsL++69S4thGHNLyKaLU6ANC16soKcHJHGN+QXPk6rO+G8Oj455ecKzhjEcIhaYqV85F73uPcHqqT+W4tVTmR1LLrtdmgXpisw5r2u/LB0tsqWowhgJJYMp0tbZZx6mz3DPpMb6rgGJ0kkAZTN1c0Wc7qTuoMuksY5Cy7Xj3BUeIwObTuEJaNbN3XL8cwg4bxHLTSi7YbOsPMaL08XLM3k5uG4f9MUNOTG57G3OwvzsV7l/hj4Sfw/wTDNVxOirZHXexzbOZcbHyIIK81dhfB0nGHGcMbWF1DQ5ZakAfELg5RfqQV7wpYGQsIY0NB1sBsu+Lz5MqWqNkbLbJpuknWQV0mwKQRskmjZpSTk1NGyOyCRQRUpJAoqBJJJIEkkkgJQSSQJIpHZNQI6iy0jte4Aw7jrhyaiqWiOpY0uglAF2utoPQkBbuiEHiDsp4bnoO1fDWVMZbNT1BikB65Tr8wvXlLGXFrQOQC49x5hIwztzp62ICJs00NQLCw8Xhdc+t12SSd1DC6ZkPfPFgG3sL9SeQXm5sd5R6uHLWNXFNA1jMx0Cw1ccTnZM2pXJuK+LuJ4ZnPpIZX097OyOJt1/+ly7iLtQ4ypXPhkhqGuOgOci2t9Tz5LWPZ62txz96empKCnuS2ZoA311KrawwF1hK3w6C7hdeQcd7TOK4ochrpowfiJly9OQNx87qBQ9pePxyi09ZPtd8pu211M5I1x5W166xTFaeioHh0rS61rX1sqDB8SFU+WVxvHu0rz6eMcXq2d9JO5xdfvCbnTkAuo9lNZV12FvEwe6J3waALy5Xy9uM1j5bbPi/czSNeTY6NsFSz4wYpCHOuM25NrDr5qk40qp6R78osQTbyXGcb4oxM1Dsz3b/wCXKxj8r5bzvZ6d8q8TwVsQfV18QNwR4rqsGOcOvOWnxCndLf4XOtc/3XmzEsexSokIJe5p3AGUKmlGJ1U3exxmN4N8+bX5r0fh49e3jvPyb8R6wlqcMlALZo787uCr8QpoZAXQvDidgNV52wx3E7H5mVLi24u3vCQfYrZ8Mo+KYZW1cVe1rgbgXOi458WH1XXDlzvvF1rDaUd4GubqdCCuN9puFOru0KrpaGmklqJpI4Io4x4nOyt0A6krsHBc+IVNKP5jDaoaQM7LFrh5qz7D+G/5z24Yvj1RA10GE5nNJbp3rvA23mAHFb6bHWTl1eW8XT+wfs5puBuFIWzRD+aVTBJWO3s7Xwg9ALLpQ2sgNkQvoPnEEkklQkkklWSQKJQKAeqR2S80CiggigoqUkknKJDUk5NRRKCSSA2QRSKAIIpIAiEAFGnqm9+6mjlY2YNzWOqlsntrHC5XUc17XqMf+MsBrCHEvaWabeF4P7rZMeqXU1HO5oJ303TuNKN+KUdJUOh7uajqmeYLXEAkH5J+LRd/TyAi915+a79PTwY3HxXNavHhTztooqd9ZWzgujpYmXIH9R5NHmSFRY5hFdVUzqrFTg2HxlhNnyGR4Ho3T6qfxJh/EUUdQcJoxSNmNnTtLRI+3Vx2HkuRcU8B4/idLV99jMoebFgfI7K1x3uAD0XHix7v5Pdnn2z4RV8X0WFUUz/w+N4RMbXGv2GZamKqdkje8kp5mEad2Vmd2T4pTPZPWV9C5rmkWAc5wPpYX/5Wy4V2dfzOWGmdUF0MUYbdrA0m2nzV5OPCX2zxcvLlN2eEvgjDxVV9NKbvp5PiFtl6c4Q4fgocNDoImMaG6Ahc/wCCuDocPp6SjpY3ODLDO/Un1K7a6BtFhTWg6kLnx4ebWuXktkjinabSAyPlOVm+m9gvP3EpzVbmsbZouSQLL0N2tujFPJlce8K4ZWUBle/O27XaE26rhL8q75T4xz2oqHGXLEWtHV2yk0BhdJlqMZo4XA6g2W7RcA4YXNqY5Z+8cbkyWcB6Daypsd7NKV0ss9PiZhc55eWvh8OvIWXswxwvt4+S8k84xYYYyD/8fF6Z9urAR9Cr2nnqKc/nMa+F2gmhJLQeVwdQtApuCqiCnfleyV7yAHi7coHTVX+BYNjmHhv/AF/exOFnRlx+y5cnHj9V04+TO+Mo7BwNK90DgfFsbdV1L+HzDjT4XxDiTmWdW4zKAf6mxgN++Zcf7PpJG+CVtjmA9lkquK+KYJG4Hhta/CcLoqieWUwSZXTvdI5znvdvYC1htpzTh5ZxzdZ5eDLmymOL1cElrHZbilTjXA2G4pVSvmfOxxbI8Wc9ocQHHzNls6+jjl3SWPl54XDK436JJJJVkkkkrqhJp3RJQOqqEToglbRAohFJJBRpKRugklZOS0TUQo0NgkkiEQECnIEIpqSJCCBLi/bxBi9BxPhOO4PPJBOAIWvadMxOxHMHmF2hUXGWD0+K0MBnbcU87JR7OB/ZcOp4/wAnHqPof4zqJ0/UTLL15l/9RKGtnMEdFW5e+IaXADS99x5XVgIQ/Nfmtdw+Srx3iOYXjipMOGdxt43OdezR5aX9ls1C4GxK44/Jvnx7cv2j1+FxVFOYXMFiFoeMcBd467Kl7Gnc5v7WXTZnhrd9vqqvEZcwsLeWq1lhjfbHHnnj6cgqOAKOKofJNJLMLbDwj3O5+av8A4Tia1rmwNijHJostwhozNJdws0deasGDu3NjayzLHW+x5fNZmEjtly5WaV9Dh8VOxpjYByGisuI5O5wuO42bqstJAZJmttpdVvGU9iY9LBuUeq3rWNZw+WcjiPaNUCaocCLZjaxHLktPpKIFxD2AhbJxgDJVOO7WkqtpS1zA0bjdfOvt9PKT0scOooe5a3LfosNbw7STlws+B7tyx1vop2Egl1ybE8v2VxlJsbaeZ5rcy8eXG4avhodRwU3P+XXOt5xi/zTH8OSU98ry48iVvDoyTmFiD9ViliuQXKU0pOH4DBMNLHmFr/aVDI2hkMBeRLVhstuYdctHzW8U0TDPfYqoZQS45xoOH5HF0NTVQTNH9Ia8Zh8gVjLHeOnXpc5hzd99R6L4DoG4XwZg2HNFvw9DEw+uUE/UlXabG1rGBrBZrRYDyTl9vGamn5vPK5ZXK/ZIpckFWSKCJKYVQ4ppNkQbaJp3QFNO6cNkCqgJIpKKkXRQIRVZJJEJFTSldFAoIHIXSuggN0rIpKKACZVRh9LI07ZSn3sj8TSOosiy6u2lcOQvpMYxWOUBrpXNeDa1wAdPqraKUsjDdDqQVhxZwMTqeOnkNSG5YHN11PXpZYoM7Ig2e2cNGbXmvFPF0+py3vvf/aa5+ZmriOijODjILA+mgH1Sc7w/FoVlhYHC5N/MlbjE8Cxojbo7U7lBzg54a3dCpeIwfDrsAoOIVkdBQy1MugDd+iZXTWMtbDQyQQ2c54FlqnGkjHB4D9SNwVpFJ2j4diWOy4TTYnTmtjYXOpy+ziB06ny3VJxhxgWEtbK7MQQAT9VjLllxeji6bLHPdV3Ewje8gO11B10WpR1DqWR5Lr5dx1F1R8RcXUVBXdzX4tBFK7UxufqB7LPhuKUmKMEsU7Hhws1zSCCvJZfdj2zWV1K3/CH96GSMtld5K/jZYAXC03gSvhklfRvJIYSBfqt5sWAZQNNd1I51Eq2AEhvxDYqBUuDBqCLqdWu3cQRrf0VFiEpLt9LbXUtRMwx57+/LdYezOZ+LdtdNJFG5lPSvezORbOfETb309ksIku4m9gAdVsnYjg8LOKhVRQhuQSSvublriLfXMt8c3ljP2455TDDO/p3ICwSSSX13wNkkkkqoJpT0CAqmzOaSLkEBBQO6QRuooJJIJBKGySDUVWSSSQQFJJJAbIJJKAlK6CN0UrogpqIRVTjceJsDn4bCyZzuReGlvXdVUcNZDAwVwjFQBd+Q3aL6ix5rbFSY6LVV7aFoK8/LhP5PTxctusdIETs7g0Gw3Isp7BlALdAVXwaG4OnNT6a79HW9lyxd7RFO6VwzDY30WLF8Jhr6J9LKwujc0hzVLnq4KKmvYgAgaBNfVu7q7BckaLrJKzM8sfLguM9jeHUmPnEpmvkLH97DI1xbZw2vbYrQuMoZKHFpZpaecMDr2IuPS69VYow1VL422uNddlyjiTh9tZW921znRbuB2PkvPycUnjF7uLq8s7vN5xrsKw7FX5p6Fua5dm/V7nmmYbh82HVRjomEMd9F2bGOCY6K8uWzT+q2yoG4IaZznSgb3BXDLc8V6MOXHe4gcGU9VT1TJnh2bNcrq0UrpYGm+pGtlq2GwxNjv8A025WV5BM1kNuuwK5TwuVlu2HEHWe5t9PXmqarO7ha+lwp2MStLbAAne3VQHNJYL3IJ+Se2LVnwth82LVLcMglbFNVXjZI8EtbcHU2XZezrhB3C9JKamsZV1coDXOYwta1o1sL6nXmuedkkAl4qoiBnETXyk26NIH3C7eNl7+l48dd32+X1fLlvs+iSSSC9jwCgkkqhIFIlC5VDSgnFBFJBK6RRSKBuEUroJAKITbIhGTkCkClyQK5RCQ2SQJJJJAkkkkBsgkkgcqniJtnwP20LR6q1B1UHiCIy4ZI5vxReMW6Df6XXPObxrpx5ayigjkGgta3+WUttQGMLi7kq+J7TvbXZR6yfLC8XAIG5Xj3p79bSZa1jpwC4HMLb7Jz8Xo6KFxnkY0W1ubLl3EjsfmbM7CauOOZgOTM2659jGDca1EsTsVx6PJa7jHGbgc9CVrDO5enfj6aZX5V36p41wTK6F9Q250vfT0VbSVmHzB9SauAgm+bOPhXn+TBsSJ/J4iY4sykCWlFnHcjQ301UPEqfiwTijp5qKozuIbIyfu26b3B2Hr0WrM3unR8cn3HceLeL+Gmn8G2sie7cZTcLTZcToqyQ93LG5h00IuFxetwniSnrJBPLSNka6xDZTICfXmo75sXoXZhWRZ76gEi65Z4XK+WrwY4Y+HbnOYwZGusA3W/NYxWd2AbnXX3XJsP4zxGC0VTTVEpJsHBua622kxOWpiZ3jHtJtoV588bj7edsstR3gBHXe6zmzmBoGlrEKpoX94RfWxCtmOsfhOhFh1CxjEyrpPYfQk4nXVzmm0UAiaT1cf7NXWQtS7K8NOH8KxzSsyS1jzO4HfKdG/TX3W2hfV4ce3CR8TqMu7ktCyIQKIXVxJJJAqhWQRugQqGlJEjRBACmkpx2TSikhrfdK6RRUzRCyAKJKMiNroJJICEU26SAohNCcgSSSSBJIpBAgjYOBBFwdCELBEKUaJisD8MxQ0gOaM+OInmDy9RsoeItc6BxaSLi2i2jimjirJO7f4XZAWut8JudVq7HPjkNJUt8bTrfZw6jqvDnPNj6PHbcZVKaXLHJbMw23tpdU2Mzgw93+G71zRuBqt6FKyQWNrlFuBw1AyFtjfU2XHtv09WHL2+XnnH6rDKCN4qGVFPdxdd7Ta/qNlq386w41Bkjxeka0A6GUL01jXAmFVVO6Krja5ruuq5LxP2FYLVTve3NGN22XXGZ/b349dlZ4cpqcSo5XEMxKne9x3EgKbR0tO6dsj52yG9+v0W3O7HsNpJP1se24a8HfpdTKfgiKkLQHZnAaW0uuXJnZ6XLmzz9qilgpwA5rC529zupWV+fMGjoAOSmy4M6N/iDgGm+6TYS6WzTfVee3bz1PwpndAPPO5AW69nvD8nEWNshkDhSQWkqHX/Tf4R5nb5rUKdjWNDpDo3QW5rrfYOC84pPyLY2gdBdxXbhxlzkrzdRlceO2Oosa1jQ1rQ1oFgBsB0TwgEl9V8Y4WSQR2RCSsklsqG80jskmlUIpJFJA12yaU87phUahBIoFIlUSgUSmpwIVrJDZJK6N1ACkEjdIKhySQOiQ3QFJK6SmgkkkkBuiNELIjzQVGM61bLb5P3VBjVMKiLOzSRvwlXuOH/qWgf0hV7wXA/ReDkvzr6PFPhFNhVWM+SQlsg0cDsrltWyIA3F99FruOUUmY1FIclQ0Xb0PkVrMPFbWzzU1YTFVxOsWOI013vzGykum55bzi2IfklzGte4EHKeSpMaxJrou5kDmGUHYXt7rVJuJWGV8r5LsvoSbX3VLinEF2PaH6uGmU7K3kenHGRc4vXQCLuJCHZd3WVA+oDqnNcBjea1quxTvB3kszy3a2+qjnEw1ls5cDre+novNnuvR3SRf180dvCQdFVRhhd3um6qI690krGb5jZo66qdJIbdB5aLnrt9uVy7vESu9zyWGgB0C7T2CMtQ4kbfqj+zlw6jJdJcbbLunYN/7fiI6Oj+zl16b/AJY4dXNcNdLsijZAhfVfHAHVOumhFWIIQKKBKoBTSnOTUCugkSm3QEppKRTSdUWCkkkVBJRsgiCtoOqSSV1NBBGyV0roCAkklZAkUimgoHJIJ7GOfsNOqgF0Hvaxhe82aNyVMio+ch9gtZxCR89bO97jkbIWMYNmgGy5cvLOObdeLi/JdMVbUfiJnyWsGmzfRR7525UGnxODvUIZh5FeCZXK7r6HbMZqGTRlzXOLdtlyXtd4PrK+Q4phDQZmj86MOs5w5EeegXW3O000VdWASNI0Hvot1Hj/ABTFsZpKh0MjpYe7cGOEzdRr05qnfxZW94e+eRlIBAFiTexXqDizhPDMWmbNPCGTRm4ewC59eq5pxh2aYTPIKimb3Dmm5a06O8yndj9nblfTlLeIpyyORziY3agEX1/y6zU2KVVU3uyCT4XB1tBc9VY4lwlTwylkrXBtzq02VhhuF0sLGR91drTexF8x81i8mP06zjz+0zhWgqG07aqpJL3DwXGyt6ki7gDsd01srmsFtAPqsReXv25815sru7ejHHU0nUBubHQDku1dg1TE04hTPkaJZGscxhOrgL3t6XC4rSaWV9SVlTh7Y62kmdFPA8OY5psQtcXJ+PKZMc3H+TC4vUN0CVy/s37RZ8VkkoMSaHzRsD2vGhc3Y+4XQIsXoZLDvshOniFl9bDkxzm4+NyceXHe2p5SCDXBwBaQQeYRK25DdAlJBaAKSSF0Adumkpx2TdUAKBTim3BQIFIpJE2QSRdFNuiCtByXmhqkPNNAo6pXCIKAI3KWiLWFxsASfJQCxTo2Oe6zQSVJhpCdZDp0CzksisxjRcqbGKGlAIMmvkpDrNLGgADMNE6MW3NzzWKoda7v6CCp7EgeS0uu8GJ1cFtWTE+xs4fdblfVarxTG2lxiOo2bVxZL/72f3afovP1OO8Hp6W6z0q5AA4lY7jTWye43BudVGkdYrxYvdfJ8jjY218lEqT4Te3vyT3yWNr7BRaiRzjlNreuq3azIqcRaXNN7jzBWr4sMua50HutqqxyBIvzGt1ruMR+B1slzvoueTtg0HHKdkji4hv/ACqDuSx1xe3mtsxSNpDiCLX2VM9gNzkXGu6se5x05JkFzISTysrA05foNFjZTZDsoJFM4Cx+6lzVA7trORUIEDZNrHZWN1PkpRe9nMjo+MoWtO9PJf00XW3SOuW33C5P2SQOquKaurI8NLTCM/8A7Pdf7NXVmt/MBPJe/pcbON83q8peRZ4ZiVUyFpjlLSORN2lX+H49BK4Q1I7qTr+krVqdhbDGNuafIPFlI03BXskseSyVvocHNBBBB5hLVabhuI1VG+zXF0f9LlslHiVPUsBzd248iujFmk1NdujfmlujJpvZBEoXQBBFNKA3TSUkCUXSXZBEFJbQ4FJAaIjVQJOTo43vPgaSpkNM1gzSWcfoFNjBBTPfZzvC36qdGxjW2YLItuRtZFxDWrNobK8MYeqi05L5i469Ep3lxsNk+msHABak1BLYLXKwSG5eOZOikbNUSR+VzfNyzBkgJMQvu3RV3F2HyYlgc0VMB+Li/Opif+43UD31HurFmknk5ZB0Uyx7pqtY5XG7jnWHTtqsPZUgEd42+U7jqPUG4WGc6gFWfFFI7CcSNTEwCirH3PSOY7jyDt/W/VU07mkEh3PW/JfMyx7L219THKZzugPeMpItqoUsgzXuNfYrKxwykaO15KDV3jeXXPos3LTcmyqHANIOt/mtexUZs1iGk7q0kqGubqbEbCyqKxxJIuCFLluNYzVa3icTQTZ3mbhU00fi0AAJ3PNX9cx7wS4gEnkqp0NpQ0DUrlXaI8cIym3PqFhqWW2Vz+HyRm41VTWkZ7X+SyqBl16lRsUkEUJe46Dcqxc0NYXJ/D/D0nF3EFPg8eYUoIlrZB+iIHUerth6rWONyykjOeUxxtre+xzB30XCbK+dhbPiTzUG41ybM+gv7reo6clt+uilRUsbSyCKMMjYA1jW7NAFgB7KZHT/AJgbyaLlfb4+OYzT4mfJcragujyyRRAa2ujUxWaDbUKSGB9fcDRrbKRUwZmea69u4593lWxRZxcKVAyw6JlKLOI5g2U9kYI2TGbi2hDVVFNqDmZ0KtaSsjqB4DZ3NpUFkYIyuCjz07oHCSMkW10Uyx0ku14UFWQVsuXxeK3VTIKqOXT4XdCsmmYoHdJxsm3ugcUwo31QJ0UVKTm6poBJ0F1NjpMrQZASTyC3ayjNY5zgGgk9AptNStZ45bE8h0WeJoaLNbl9E4Cx1WbQWiw52Q+J3kieic0WUBFgFFrJgBlWeV+UKpqHh0pK1jBlYXOdup1Oyzdd1FpWbEqewJlQ93wqDMbyi3VTXbKBMfzB6qYiUNWAJzST6hNjIyjVObqM1lBhr6SnrqOWkqoxJDK3K5v+bHzXMsWpanAsSFDiF3QS/wDpaq2kv+13R4+u4XU1FxShpMSopKOugbNBIPE130I6EdVy5eKck/bvw8147+nMTEMwIv1OixV1OXQl4vY7rYazh6owhznxF9XRgaOOsjB/uHP1CwPZFNE7IRlI2Xgz47PFfQx5JfMc8q3uieR0+qgue540dfmrziOmdFKSARbmFUiNsj7G1jzXlm5dPX4s2rJopH6C/kmU2HPc/vHWt91sNPRNJ8IYenNW1LhVmZnAklb7bWblpo2Nj8NTkkC4FrlahC2WpqC4EkX0W98b0bnSNp4mnM7yWPhXg/EcRkEVLTkhts8jtGM9T+26xjLllqN3KY491rV3YXiFdNDhuGwPqKuc5WNb1/Yea7bwNwnTcJcPtoGObNWzEPrJx+t9th/tGw+fNXHD3DuH8Pwu/DtEtVI3LLUEakf0t6N+/NW0VOXHM8aL7HTdN+P5Ze3xup6n8vxx9IcFPkYXuGpWZsRZC9xGpB0Uh9gC42DWpszr0L5SDrt6L2SPIqqEZrSWuSrAszNsomGMJhuepU8bbJj6L7VJYI5yDzU+AaDTdYapl5M1lnozmj10sUx8LWdjAdRdZMgcLOGiUQ1sFnDT0W6irqKYxvu0GyxFutxo4K4cwOFioktORqFyuLUrFBUvHhkGYcipLJI37HXoVGfEbLC5pB5+Xks2CxKa4qNDPIDlfrZSNHC4UVfYZBZveuGp+H+6lyCxCewBoA5BCXa9lLWTQLJFK4TXEoHGw1QDhumE30QLrN3CaEatmN7N1UJnieBYlZag3kJO6VI28l/2XWeILGla1sV7WKzt2WOMWYFk2auV9gPOigvF5R6qXKdNVEkP5gstYiVGfDYp4FgQsMbhbULK05gpQgb6pHVYnGxSbINimg8qoxLBqGqJdlMMh/VHpf1GxVsXA7G6a4A+qlxmXixZlcbuVz7iLhDEpYj+DkgqNNi7I766fVajDwpxLBOWSYRUFhOjmFrh9Cu0yMdyWB8cnJcL0XHld+nqx67kxmr5aBhXD+JWHeUUrLc3ABX8WCT5AHmOPS2pufor3upSbap7YHnyW8elwjGXVZ5NZj4SwkVH4irz1b73DT4W/wByrYRtZG2GGJscbdGsY2zR7KxMLBq9yY4tGjGrrhx44fxjjnyZZ/yqIynaDmkTiMw6MCzPDWi8huRyUeV57ovdo3kF1YV2Jyd5VR0ke2a7lKr2WoTG07Cyr6L83EnyH2VlWH8uys9FQqdrY4GjyRe/Q7XTHGwyi6a43bYbqKBGfU7rLTNykgJ8DL6HospYByQZYvEApLBdRqYhTGHVaZphZY7Jrx5LO4LG5vNRUZ7Ao8kduSn2FtlhkaDdZsVCZH47pzJMs3cuOpFws8bPGFX4tdtXC5ps4Bx+oWMljebonxNWMnROjcLELKMQdy6IOKZKck/kUS4W9VQr9bJsjhYgdEHFYXu0cedlqQRKkn3Kz4c3W56KFLI4vAU/Dtr2WqLFgGie+2yDNtEJCuQxSuUaQ3OizSarA4XK3Bkhva2iksUWH0UlmylDJBrfUrGddlkm3UcuVgTnFuxCaKk6gkJrnA63WJ7m62H0WtIz/iYzp4h7IGdn/ct6qFJ4vhJWLJfQD3TUFl3zdu8akZWbmS/kOar205vrr7rO2LLrb6poPkmbezRqsYdLKTl8IvyCAaXOIAsFKY0Mb5oMDmBrcupPMlV+KSZIsgPJTpncyqivJe8N3uqFhEe7zqSps4JadFjowGMtZZZj4Oas9CueNdE9rNr3CflubbLI1hPJRRjAzLMW3CxtBB2WZl3C2nzVRiZo+ysIQLaBV7/DMBZWLCGxamyRKLx6JtrhIHMLhZC2zPNBgcLLBIsk77eG+pWCR3JFGnFyT0VTirs2I5R+iIX9yf7K6ibkgJO5Wvyv7yqq5QbtL8oPk0W+91ixY//Z" alt="Diego Villanueva"></div>
-          <div>
-            <div class="about-name">Diego <!-- PLACEHOLDER: Apellido --></div>
-            <div class="about-role">Técnico SMR &amp; Junior Prompt Engineer</div>
-          </div>
-        </div>
-        <p class="about-text">
-          Estudiante de <strong>segundo año de SMR (Sistemas Microinformáticos y Redes)</strong> en Madrid.
-          Combino mi formación técnica en redes y sistemas con el desarrollo de bots de Discord y aplicaciones web.
-        </p>
-        <p class="about-text">
-          Tengo experiencia como <strong>Junior Prompt Engineer</strong>, desarrollando soluciones con IA y optimizando flujos de trabajo mediante prompting avanzado.
-        </p>
-        <div class="about-tags">
-          <span class="tag">Madrid, España</span>
-          <span class="tag">Junior Prompt Engineer</span>
-          <span class="tag">Técnico IT</span>
-          <span class="tag">Autodidacta</span>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay:0.1s">
-        <div class="section-label">Datos rápidos</div>
-        <div style="display:flex;flex-direction:column;gap:0.85rem;margin-top:0.5rem;">
-          <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-            <span style="font-size:1.1rem;margin-top:0.05rem;">🎓</span>
-            <div>
-              <div style="font-size:0.85rem;font-weight:600;color:var(--text)">CFGM Sistemas Microinformáticos y Redes</div>
-              <div style="font-size:0.78rem;color:var(--muted)">FP Lumara &mdash; 2025 &ndash; Actualidad</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-            <span style="font-size:1.1rem;margin-top:0.05rem;">🤖</span>
-            <div>
-              <div style="font-size:0.85rem;font-weight:600;color:var(--text)">Desarrollo de Bots de Discord</div>
-              <div style="font-size:0.78rem;color:var(--muted)">NextBot</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-            <span style="font-size:1.1rem;margin-top:0.05rem;">🌐</span>
-            <div>
-              <div style="font-size:0.85rem;font-weight:600;color:var(--text)">Desarrollo Web Freelance</div>
-              <div style="font-size:0.78rem;color:var(--muted)">Sitios estáticos para negocios locales en Madrid</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-            <span style="font-size:1.1rem;margin-top:0.05rem;">🤖</span>
-            <div>
-              <div style="font-size:0.85rem;font-weight:600;color:var(--text)">Junior Prompt Engineer</div>
-              <div style="font-size:0.78rem;color:var(--muted)">Optimización de flujos con IA y prompting avanzado</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:0.75rem;align-items:flex-start;">
-            <span style="font-size:1.1rem;margin-top:0.05rem;">🇪🇸</span>
-            <div>
-              <div style="font-size:0.85rem;font-weight:600;color:var(--text)">Idiomas</div>
-              <div style="font-size:0.78rem;color:var(--muted)">Español (nativo) &mdash; Inglés (intermedio-avanzado)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Trust Bar -->
+<section class="bg-primary-container text-surface-white py-12 px-gutter w-full" id="opiniones">
+<div class="max-w-container-max-width mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-outline-variant/30 mb-14">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[32px] text-copper-accent mb-2" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">5/5 en proyectos web</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[32px] text-copper-accent mb-2">forum</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">244 Opiniones</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[32px] text-copper-accent mb-2">request_quote</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Presupuesto Gratuito</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[32px] text-copper-accent mb-2">verified</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">Proyectos Garantizados</span>
+</div>
+</div>
+<!-- Reviews carousel -->
+<div class="max-w-container-max-width mx-auto">
+<div class="flex items-center justify-center gap-3 mb-8">
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-surface-white/80">Opiniones de clientes</span>
+</div>
+<div class="overflow-hidden" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+<div class="reviews-track flex gap-6" style="width: max-content;">
+<!-- Reviews (duplicadas para loop infinito) -->
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Me creó una web desde cero con una estructura clara, diseño limpio y todo adaptado a móvil. El resultado quedó profesional y fácil de usar."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">María G.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Rediseñó mi página antigua y ahora se ve mucho más moderna, rápida y ordenada. El cambio se nota desde el primer vistazo."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Carlos M.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Necesitaba una landing para presentar mi servicio y quedó directa, visual y enfocada a conseguir contactos. Muy buen trabajo."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Laura P.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"La comunicación fue rápida y entendió exactamente el estilo que buscaba. La web quedó sencilla, profesional y bien organizada."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Javier S.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Adaptó la web para que cargase mejor y se viera correctamente en ordenador, tablet y móvil. El resultado quedó muy pulido."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Ana R.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Me ayudó a convertir una idea básica en una página completa, con secciones claras, textos cuidados y un diseño coherente."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Roberto F.</p>
+</div>
+<!-- Duplicado para loop infinito -->
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Me creó una web desde cero con una estructura clara, diseño limpio y todo adaptado a móvil. El resultado quedó profesional y fácil de usar."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">María G.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Rediseñó mi página antigua y ahora se ve mucho más moderna, rápida y ordenada. El cambio se nota desde el primer vistazo."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Carlos M.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Necesitaba una landing para presentar mi servicio y quedó directa, visual y enfocada a conseguir contactos. Muy buen trabajo."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Laura P.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"La comunicación fue rápida y entendió exactamente el estilo que buscaba. La web quedó sencilla, profesional y bien organizada."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Javier S.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Adaptó la web para que cargase mejor y se viera correctamente en ordenador, tablet y móvil. El resultado quedó muy pulido."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Ana R.</p>
+</div>
+<div class="review-card bg-white/10 rounded-xl p-6 min-w-[300px] max-w-[300px]">
+<div class="flex gap-1 mb-3">★★★★★</div>
+<p class="text-surface-white/90 text-sm leading-relaxed mb-4">"Me ayudó a convertir una idea básica en una página completa, con secciones claras, textos cuidados y un diseño coherente."</p>
+<p class="font-label-sm text-label-sm text-copper-accent">Roberto F.</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-6">
+<a class="inline-flex items-center gap-2 text-surface-white/70 hover:text-copper-accent font-label-sm text-label-sm transition-colors duration-200" href="https://github.com/l0p3z26" rel="noopener noreferrer" target="_blank">
+Ver repositorio de Github
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
 </section>
-
-<div class="divider"></div>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="section-label reveal">Habilidades</div>
-    <h2 class="section-title reveal">Stack Técnico</h2>
-    <p class="section-desc reveal">Tecnologías con las que trabajo y herramientas con las que construyo proyectos reales.</p>
-    <div class="skills-grid">
-
-      <div class="skill-category reveal">
-        <div class="skill-cat-icon">💻</div>
-        <div class="skill-cat-title">Lenguajes</div>
-        <div class="skill-list">
-          <span class="skill-chip">Batch / CMD</span>
-          <span class="skill-chip">Prompt Engineering</span>
-        </div>
-      </div>
-
-      <div class="skill-category reveal" style="transition-delay:0.05s">
-        <div class="skill-cat-icon">🌐</div>
-        <div class="skill-cat-title">Diseño Web</div>
-        <div class="skill-list">
-          <span class="skill-chip">Responsive Design</span>
-        </div>
-      </div>
-
-      <div class="skill-category reveal" style="transition-delay:0.1s">
-        <div class="skill-cat-icon">🤖</div>
-        <div class="skill-cat-title">Bots y Automatización</div>
-        <div class="skill-list">
-          <span class="skill-chip">discord.py</span>
-          <span class="skill-chip">Google Apps Script</span>
-          <span class="skill-chip">Automatización de tareas</span>
-          <span class="skill-chip">Webhooks</span>
-        </div>
-      </div>
-
-      <div class="skill-category reveal" style="transition-delay:0.15s">
-        <div class="skill-cat-icon">🖧</div>
-        <div class="skill-cat-title">Redes y Cisco</div>
-        <div class="skill-list">
-          <span class="skill-chip">Cisco CLI</span>
-          <span class="skill-chip">VLANs</span>
-          <span class="skill-chip">DHCP</span>
-          <span class="skill-chip">NAT / PAT</span>
-          <span class="skill-chip">SSH / Telnet</span>
-          <span class="skill-chip">Inter-VLAN Routing</span>
-          <span class="skill-chip">Packet Tracer</span>
-          <span class="skill-chip">Subnetting / VLSM</span>
-        </div>
-      </div>
-
-      <div class="skill-category reveal" style="transition-delay:0.2s">
-        <div class="skill-cat-icon">🐧</div>
-        <div class="skill-cat-title">Sistemas y SO</div>
-        <div class="skill-list">
-          <span class="skill-chip">Linux (Ubuntu)</span>
-          <span class="skill-chip">Windows Server</span>
-          <span class="skill-chip">Active Directory</span>
-          <span class="skill-chip">File Permissions</span>
-          <span class="skill-chip">User Management</span>
-          <span class="skill-chip">RAID</span>
-        </div>
-      </div>
-
-      <div class="skill-category reveal" style="transition-delay:0.25s">
-        <div class="skill-cat-icon">🛠️</div>
-        <div class="skill-cat-title">Herramientas</div>
-        <div class="skill-list">
-          <span class="skill-chip">Git</span>
-          <span class="skill-chip">VS Code</span>
-          <span class="skill-chip">Hostinger</span>
-          <span class="skill-chip">AI Prompt Engineering</span>
-          <span class="skill-chip">Microsoft 365</span>
-          <span class="skill-chip">Microsoft Access</span>
-          <span class="skill-chip">Paquete Office</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="section-label reveal">Trabajo</div>
-    <h2 class="section-title reveal">Proyectos</h2>
-    <p class="section-desc reveal">Proyectos reales construidos y publicados — bots, apps y webs.</p>
-    <div class="projects-grid">
-
-      <div class="project-card reveal">
-        <div class="project-header">
-          <div class="project-icon">🤖</div>
-          <div class="project-links">
-            <a href="https://discord.gg/h7ZZ7YaZkq" class="project-link" title="GitHub">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="project-title">NextBot / NextCraft</div>
-        <div class="project-desc">
-          Bot de Discord completo para un servidor temático de Minecraft. Incluye integración con IA, moderación avanzada, sistema de tickets, anti-abuso, gestión de roles y proceso watchdog para uptime 24/7. Vendido comercialmente a varios propietarios de servidores.
-        </div>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">discord.py</span>
-          <span class="tech-tag">Anthropic API</span>
-          <span class="tech-tag">SQLite</span>
-          <span class="tech-tag">Asyncio</span>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:0.05s">
-        <div class="project-header">
-          <div class="project-icon">🥗</div>
-          <div class="project-links">
-            <a href="https://claude.ai/public/artifacts/c118f850-d802-4d4c-a51a-d30808c3ad27" class="project-link" title="Claude" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#d97757" stroke-width="2.6" stroke-linecap="round">
-                  <line x1="12" y1="12" x2="12" y2="2.2"/>
-                  <line x1="12" y1="12" x2="16.6" y2="3.4"/>
-                  <line x1="12" y1="12" x2="20.2" y2="5.8"/>
-                  <line x1="12" y1="12" x2="21.8" y2="11.2"/>
-                  <line x1="12" y1="12" x2="20.6" y2="16.3"/>
-                  <line x1="12" y1="12" x2="17.3" y2="20.3"/>
-                  <line x1="12" y1="12" x2="12.6" y2="21.8"/>
-                  <line x1="12" y1="12" x2="7.6" y2="20.7"/>
-                  <line x1="12" y1="12" x2="3.9" y2="18.2"/>
-                  <line x1="12" y1="12" x2="2.2" y2="12.8"/>
-                  <line x1="12" y1="12" x2="3.5" y2="7.1"/>
-                  <line x1="12" y1="12" x2="6.8" y2="3.7"/>
-                </g>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="project-title">NutriAI</div>
-        <div class="project-desc">
-          App de seguimiento nutricional en español. Incluye cálculo de BMR/TDEE, análisis de comidas con IA, seguimiento de macros en tiempo real con gráficas y exportación/importación de datos para portabilidad entre dispositivos.
-        </div>
-        <div class="project-tech">
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Anthropic API</span>
-          <span class="tech-tag">CSS3</span>
-          <span class="tech-tag">Recharts</span>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:0.1s">
-        <div class="project-header">
-          <div class="project-icon">📊</div>
-          <div class="project-links">
-            <a href="https://claude.ai/public/artifacts/74bfa75f-89de-4907-9a6a-04b9ff9faedf" class="project-link" title="Claude" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <g stroke="#d97757" stroke-width="2.6" stroke-linecap="round">
-                  <line x1="12" y1="12" x2="12" y2="2.2"/>
-                  <line x1="12" y1="12" x2="16.6" y2="3.4"/>
-                  <line x1="12" y1="12" x2="20.2" y2="5.8"/>
-                  <line x1="12" y1="12" x2="21.8" y2="11.2"/>
-                  <line x1="12" y1="12" x2="20.6" y2="16.3"/>
-                  <line x1="12" y1="12" x2="17.3" y2="20.3"/>
-                  <line x1="12" y1="12" x2="12.6" y2="21.8"/>
-                  <line x1="12" y1="12" x2="7.6" y2="20.7"/>
-                  <line x1="12" y1="12" x2="3.9" y2="18.2"/>
-                  <line x1="12" y1="12" x2="2.2" y2="12.8"/>
-                  <line x1="12" y1="12" x2="3.5" y2="7.1"/>
-                  <line x1="12" y1="12" x2="6.8" y2="3.7"/>
-                </g>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="project-title">Analizador de Apuestas Deportivas</div>
-        <div class="project-desc">
-          Dashboard para analizar oportunidades de apuestas deportivas. Integra The Odds API y API-Football para datos en tiempo real, aplica modelos matemáticos para calcular apuestas de valor y visualiza cuotas y valor esperado con gráficas interactivas.
-        </div>
-        <div class="project-tech">
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">The Odds API</span>
-          <span class="tech-tag">API-Football</span>
-          <span class="tech-tag">Recharts</span>
-          <span class="tech-tag">Python</span>
-        </div>
-      </div>
-
-
-
-      <div class="project-card reveal" style="transition-delay:0.15s">
-        <div class="project-header">
-          <div class="project-icon">🎨</div>
-          <div class="project-links">
-            <a href="https://github.com/l0p3z26/prototipo-rediseno-web" class="project-link" title="Repositorio" target="_blank" rel="noopener">Repositorio</a>
-          </div>
-        </div>
-        <div class="project-title">Prototipo Mejora Página Web</div>
-        <div class="project-desc">
-          Rediseño completo de una página web existente de un negocio local en Madrid. Propuesta de mejora visual y de conversión: nueva estructura, animaciones con GSAP, diseño mobile-first y flujo de contacto optimizado. Construido con HTML/CSS/JS puro, listo para Hostinger.
-        </div>
-        <div class="project-tech">
-          <span class="tech-tag">HTML5</span>
-          <span class="tech-tag">CSS3</span>
-          <span class="tech-tag">Vanilla JS</span>
-          <span class="tech-tag">GSAP</span>
-          <span class="tech-tag">Hostinger</span>
-        </div>
-      </div>
-
-
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="container">
-    <div class="section-label reveal">Formación</div>
-    <h2 class="section-title reveal">Estudios</h2>
-    <div class="education-list">
-
-      <div class="edu-card reveal">
-        <div class="edu-icon">🎓</div>
-        <div>
-          <div class="edu-title">CFGM Sistemas Microinformáticos y Redes (SMR)</div>
-          <div class="edu-sub">FP Lumara &mdash; Madrid, España</div>
-          <span class="edu-period">2025 &ndash; Actualidad</span>
-          <div class="edu-topics">
-            <span class="edu-topic">Redes Cisco</span>
-            <span class="edu-topic">VLANs y Enrutamiento</span>
-            <span class="edu-topic">Administración Linux</span>
-            <span class="edu-topic">Windows Server</span>
-            <span class="edu-topic">DHCP / NAT</span>
-            <span class="edu-topic">Mantenimiento Hardware</span>
-            <span class="edu-topic">Active Directory</span>
-            <span class="edu-topic">Seguridad Informática</span>
-            <span class="edu-topic">RAID</span>
-            <span class="edu-topic">Scripting Batch</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="edu-card reveal" style="transition-delay:0.1s">
-        <div class="edu-icon">🏢</div>
-        <div>
-          <div class="edu-title">Prácticas FCT</div>
-          <div class="edu-sub">FP Lumara &amp; Policía Municipal de Móstoles &mdash; Madrid</div>
-          <span class="edu-period">2025 &ndash; 2025</span>
-          <div class="edu-topics">
-            <span class="edu-topic">Soporte técnico real</span>
-            <span class="edu-topic">Configuración de equipos</span>
-            <span class="edu-topic">Administración de sistemas</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="edu-card reveal" style="transition-delay:0.15s">
-        <div class="edu-icon">📚</div>
-        <div>
-          <div class="edu-title">Aprendizaje Autodidacta</div>
-          <div class="edu-sub">Formación continua &mdash; 2022 &ndash; Actualidad</div>
-          <span class="edu-period">En curso</span>
-          <div class="edu-topics">
-            <span class="edu-topic">Python</span>
-            <span class="edu-topic">IA y Prompt Engineering</span>
-            <span class="edu-topic">Google Apps Script</span>
-            <span class="edu-topic">Desarrollo Web Estático</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-inner">
-      <div class="section-label reveal">Contacto</div>
-      <h2 class="section-title reveal">Hablemos</h2>
-      <p class="contact-desc reveal">
-        Disponible para proyectos freelance — bots de Discord, desarrollo o redisño web y automatizaciones con IA.
-      </p>
-      <div class="contact-links reveal">
-        <a href="mailto:lopezmorante08@gmail.com" class="contact-card">
-          <!-- PLACEHOLDER: tu email -->
-          <span class="contact-card-icon">✉️</span>
-          lopezmorante08@gmail.com
-        </a>
-        <a href="https://linkedin.com/in/lopezmorante" class="contact-card" target="_blank" rel="noopener">
-          <!-- PLACEHOLDER: tu LinkedIn -->
-          <span class="contact-card-icon">💼</span>
-          LinkedIn
-        </a>
-        <a href="https://github.com/l0p3z26" class="contact-card" target="_blank" rel="noopener">
-          <!-- PLACEHOLDER: tu GitHub -->
-          <span class="contact-card-icon">🐙</span>
-          GitHub
-        </a>
-        <a href="https://wa.me/34669236751?text=He%20visto%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%3A" class="contact-card" target="_blank" rel="noopener">
-          <span class="contact-card-icon">💬</span>
-          WhatsApp
-        </a>
-      </div>
-        <div class="availability reveal">
-          Disponible &mdash; Madrid o Remoto
-        </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-copy">© 2026 Diego. Todos los derechos reservados.</div>
-</footer>
-
+<style>
+.reviews-track { animation: scroll-left 40s linear infinite; }
+.reviews-track:hover { animation-play-state: paused; }
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.review-card .flex { color: #B87333; font-size: 18px; }
+</style>
+<!-- Servicios Grid -->
+<section class="py-section-padding px-gutter bg-surface-bright w-full" id="trabajos">
+<div class="max-w-container-max-width mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Proyectos web que transmiten calidad desde el primer vistazo</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Selección de proyectos web destacados: páginas creadas desde cero, rediseños y propuestas digitales profesionales.</p>
+</div>
+<div class="relative group">
+<div class="flex overflow-x-auto snap-x snap-mandatory gap-8 pb-8 no-scrollbar scroll-smooth" id="projects-carousel">
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 overflow-hidden bg-surface-container-high"><img alt="Diseño de página web corporativa en pantalla" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1530435460869-d13625c69bbf?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Webs corporativas</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Páginas profesionales para presentar negocios, servicios o marcas personales.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 overflow-hidden bg-surface-container-high"><img alt="Diseño de contenido digital para landing page" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1759215524484-89c8d7ae28f2?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Landing pages</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Páginas directas y enfocadas a captar clientes o solicitudes de presupuesto.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 overflow-hidden bg-surface-container-high"><img alt="Rediseño visual de una interfaz web" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1776278806688-64ef6a7e2cc5?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Rediseños web</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Actualización visual, estructural y funcional de páginas antiguas.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 overflow-hidden bg-surface-container-high"><img alt="Compra online desde un portátil" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Tiendas online</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Estructuras preparadas para mostrar productos, servicios y formas de contacto.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 bg-surface-container-high overflow-hidden"><img alt="Optimización de diseño y experiencia de usuario" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1761122912306-13d8f83892c1?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Optimización web</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Mejoras de velocidad, estructura, claridad visual y experiencia de usuario.</p>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[350px] snap-start bg-surface-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="h-56 bg-surface-container-high overflow-hidden"><img alt="Portátil con proyecto web en pantalla" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1678690832310-cf614292671d?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-primary mb-2">Mantenimiento web</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Ajustes, actualizaciones y mejoras continuas para mantener tu web al día.</p>
+</div>
+</div>
+</div>
+<div class="hidden md:flex absolute top-1/2 -translate-y-1/2 -left-6 -right-6 justify-between pointer-events-none">
+<button class="pointer-events-auto bg-surface-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg text-primary hover:text-copper-accent transition-all" onclick="carouselPrev()">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="pointer-events-auto bg-surface-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg text-primary hover:text-copper-accent transition-all" onclick="carouselNext()">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="flex justify-center gap-2 mt-4" id="carousel-dots">
+<div class="carousel-dot w-2 h-2 rounded-full bg-copper-accent transition-colors duration-300"></div>
+<div class="carousel-dot w-2 h-2 rounded-full bg-outline-variant opacity-40 transition-colors duration-300"></div>
+<div class="carousel-dot w-2 h-2 rounded-full bg-outline-variant opacity-40 transition-colors duration-300"></div>
+<div class="carousel-dot w-2 h-2 rounded-full bg-outline-variant opacity-40 transition-colors duration-300"></div>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 <script>
-(function () {
-  "use strict";
+    let carouselPage = 0;
+    const TOTAL_PAGES = 4;
 
-  // --- Nav scroll state ---
-  function initNav() {
-    var nav = document.getElementById("nav");
-    window.addEventListener("scroll", function () {
-      nav.classList.toggle("scrolled", window.scrollY > 40);
-    }, { passive: true });
-  }
+    function updateDots(page) {
+        document.querySelectorAll('.carousel-dot').forEach(function(dot, i) {
+            if (i === page) {
+                dot.style.backgroundColor = '#B87333';
+                dot.style.opacity = '1';
+            } else {
+                dot.style.backgroundColor = '#747878';
+                dot.style.opacity = '0.4';
+            }
+        });
+    }
 
-  // --- Mobile menu ---
-  function initMobileMenu() {
-    var btn = document.getElementById("hamburger");
-    var menu = document.getElementById("mobile-menu");
-    btn.addEventListener("click", function () {
-      menu.classList.toggle("open");
-    });
-    menu.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { menu.classList.remove("open"); });
-    });
-    document.addEventListener("click", function (e) {
-      if (!btn.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.remove("open");
-      }
-    });
-  }
+    function carouselNext() {
+        if (carouselPage < TOTAL_PAGES - 1) {
+            carouselPage++;
+            document.getElementById('projects-carousel').scrollBy({ left: 400, behavior: 'smooth' });
+            updateDots(carouselPage);
+        }
+    }
 
-  // --- Scroll reveals ---
-  function initReveals() {
-    var items = document.querySelectorAll(".reveal");
-    if (!items.length) return;
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        entry.target.classList.toggle("visible", entry.isIntersecting);
-      });
-    }, { threshold: 0.08 });
-    items.forEach(function (el) { observer.observe(el); });
-  }
-
-  // --- Smooth anchor scroll ---
-  function initAnchorScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-      a.addEventListener("click", function (e) {
-        var id = a.getAttribute("href").slice(1);
-        var target = document.getElementById(id);
-        if (!target) return;
-        e.preventDefault();
-        var offset = 80;
-        var top = target.getBoundingClientRect().top + window.scrollY - offset;
-
-        var reveals = target.querySelectorAll(".reveal");
-        reveals.forEach(function (el) { el.classList.remove("visible"); });
-
-        window.scrollTo({ top: top, behavior: "smooth" });
-
-        setTimeout(function () {
-          reveals.forEach(function (el) { el.classList.add("visible"); });
-        }, 500);
-      });
-    });
-  }
-
-  // --- Boot ---
-  function safe(fn, name) {
-    try { fn(); } catch (e) { console.warn("[" + name + "]", e); }
-  }
-
-  function boot() {
-    safe(initNav, "initNav");
-    safe(initMobileMenu, "initMobileMenu");
-    safe(initReveals, "initReveals");
-    safe(initAnchorScroll, "initAnchorScroll");
-    document.documentElement.classList.add("is-ready");
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot);
-  } else {
-    boot();
-  }
-})();
+    function carouselPrev() {
+        if (carouselPage > 0) {
+            carouselPage--;
+            document.getElementById('projects-carousel').scrollBy({ left: -400, behavior: 'smooth' });
+            updateDots(carouselPage);
+        }
+    }
 </script>
-</body>
-</html>
+</div>
+</div>
+</section><section class="py-section-padding px-gutter bg-surface-container-lowest w-full" id="servicios">
+<div class="max-w-container-max-width mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Servicios de desarrollo web</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Soluciones para crear páginas web desde cero o rediseñar webs existentes con estructura clara, diseño profesional y enfoque comercial.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Servicio 1 -->
+<div class="group bg-surface-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-surface-container-high"><img alt="Código de una página web en un portátil" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-[20px]">Web desde cero</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Creación completa de páginas web profesionales, desde la estructura inicial hasta el diseño final.</p>
+<a class="text-copper-accent font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-2 hover:text-tertiary-container transition-colors" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo+y+quer%C3%ADa+pedir+presupuesto+para+una+p%C3%A1gina+web%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                                Pedir presupuesto <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Servicio 2 -->
+<div class="group bg-surface-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-surface-container-high"><img alt="Rediseño web en una pantalla de escritorio" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-[20px]">Rediseño web</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Actualización de webs antiguas para hacerlas más modernas, claras y adaptadas a móvil.</p>
+<a class="text-copper-accent font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-2 hover:text-tertiary-container transition-colors" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                                Pedir presupuesto <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Servicio 3 -->
+<div class="group bg-surface-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-surface-container-high"><img alt="Persona revisando una página web en un portátil" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1635405050330-b0824eb1bf26?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-[20px]">Landing pages</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Páginas enfocadas a presentar un servicio, captar clientes y facilitar el contacto.</p>
+<a class="text-copper-accent font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-2 hover:text-tertiary-container transition-colors" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                                Pedir presupuesto <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Servicio 4 -->
+<div class="group bg-surface-white rounded-xl border border-border-subtle overflow-hidden hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col">
+<div class="h-48 overflow-hidden bg-surface-container-high"><img alt="Gestión de tienda online desde un portátil" class="w-full h-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1688561807440-8a57dfa77ee3?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/></div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2 text-[20px]">Tiendas online</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Webs para negocios, servicios o proyectos personales con imagen profesional y estructura clara.</p>
+<a class="text-copper-accent font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-2 hover:text-tertiary-container transition-colors" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                                Pedir presupuesto <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact/Map Section -->
+<section class="py-section-padding px-gutter bg-surface-white w-full" id="contacto">
+<div class="max-w-container-max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Contacto para tu proyecto web</h2>
+<p class="font-body-md text-on-surface-variant mb-8">Contáctame para hablar sobre tu página web:</p>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-copper-accent mt-1">location_on</span>
+<div>
+<h4 class="font-headline-md text-[18px] text-primary">Dirección</h4>
+<p class="text-on-surface-variant">Plaza de España, 28008 Madrid</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-copper-accent mt-1">call</span>
+<div>
+<h4 class="font-headline-md text-[18px] text-primary">Teléfono</h4>
+<p class="text-on-surface-variant">+34 669 23 67 51<p>
+<p class="text-on-surface-variant">+34 669 23 67 51</p>
+</p></p></div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-copper-accent mt-1">mail</span>
+<div>
+<h4 class="font-headline-md text-[18px] text-primary">Email</h4>
+<p class="text-on-surface-variant">lopezmorante08@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-copper-accent mt-1">schedule</span>
+<div>
+<h4 class="font-headline-md text-[18px] text-primary">Horario</h4>
+<p class="text-on-surface-variant">Lunes, martes, miércoles, jueves, viernes</p>
+<p class="text-on-surface-variant">00:00 – 00:00</p>
+<p class="text-on-surface-variant mt-2">Sábado</p>
+<p class="text-on-surface-variant">00:00 – 24:00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-xl overflow-hidden shadow-md">
+<div class="relative h-[360px]">
+<iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=40.423889,-3.712222&amp;t=m&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" style="border:0;" width="100%"></iframe>
+</div>
+<a class="flex items-center justify-center gap-2 py-3 bg-surface-white hover:bg-surface-container-low transition-colors text-primary font-label-sm text-label-sm border-t border-border-subtle" href="https://www.google.com/maps/search/?api=1&amp;query=40.423889,-3.712222" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-copper-accent">map</span>
+Abrir mapa
+</a>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-primary-container py-section-padding px-gutter text-center w-full">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-display-lg text-display-lg text-surface-white mb-6">Transforma tu página web o crea una de 0</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-10">Tener una web profesional, clara y preparada para transmitir confianza está al alcance de cualquier proyecto. Escríbeme hoy y vemos la mejor solución para el tuyo.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="bg-tertiary-container text-on-tertiary font-label-sm text-label-sm px-8 py-4 rounded-lg hover:bg-opacity-90 transition-colors shadow-sm" href="https://api.whatsapp.com/send/?phone=34669236751&amp;text=He+visto+tu+web+de+prototipo++y+quer%C3%ADa+saber+más+información%3A&amp;type=phone_number&amp;app_absent=0" rel="noopener noreferrer" target="_blank">
+                        Solicitar Presupuesto
+                    </a>
+<a class="bg-[#25D366] text-surface-white font-label-sm text-label-sm px-8 py-4 rounded-lg hover:bg-opacity-90 transition-colors shadow-sm flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined">chat</span>
+                        WhatsApp
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-black text-on-primary dark:text-on-primary-fixed full-width w-full">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter py-section-padding w-full max-w-container-max-width mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<div class="font-headline-md text-headline-md font-bold text-surface-white mb-2">Prototipo Web</div>
+<p class="font-body-md text-body-md text-on-primary-container dark:text-surface-variant max-w-sm">Desarrollo y rediseño de páginas web con estructura clara, diseño profesional y enfoque en resultados.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-6 md:gap-12 text-center md:text-left">
+<div class="flex flex-col gap-3">
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Aviso Legal</a>
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Política de Privacidad</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Cookies</a>
+<a class="font-label-sm text-label-sm text-on-primary-container dark:text-surface-variant hover:text-copper-accent transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 py-6 px-gutter text-center">
+<p class="font-body-md text-body-md text-on-primary-container text-sm">© 2026 Diego López. Todos los derechos reservados.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface-white/95 backdrop-blur-md md:hidden border-t border-border-subtle shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-all w-full h-full" href="tel:+34919930335">
+<span class="material-symbols-outlined mb-1">call</span>
+<span class="font-label-sm text-label-sm text-[10px]">Llamar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-all w-full h-full border-l border-border-subtle" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-sm text-label-sm text-[10px]">WhatsApp</span>
+</a>
+</nav>
+</body></html>
